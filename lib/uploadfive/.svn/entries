@@ -1,0 +1,42 @@
+10
+
+dir
+0
+https://subversion.assembla.com/svn/washintongcollege/lib/uploadfive
+https://subversion.assembla.com/svn/washintongcollege
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4ec4c687-2405-47d3-9b55-13302ad199a6
+
+Sample
+dir
+
+
+
+add
+
+__MACOSX
+dir
+
+
+
+add
+

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4da8949-ff13-4f1e-b000-87e55edebc60" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/evaluaciones_central.php" afterPath="$PROJECT_DIR$/evaluaciones_central.php" />
+    </list>
+    <ignored path="wcollege.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="wcollege" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="lecciones_central.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lecciones_central.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="60" selection-end="362" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1547">
+              <folding>
+                <marker date="1400019803038" expanded="true" signature="298:319" placeholder="SELECT * FRO..leccion..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="evaluaciones_central_old.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/evaluaciones_central_old.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="30" selection-start="1796" selection-end="1796" vertical-scroll-proportion="-11.115385" vertical-offset="306" max-vertical-offset="1241">
+              <folding>
+                <marker date="1397492491000" expanded="true" signature="937:1003" placeholder="SELECT lecci..usuarios..." />
+                <marker date="1397492491000" expanded="true" signature="1103:1124" placeholder="SELECT * FRO..leccion..." />
+                <marker date="1397492491000" expanded="true" signature="1976:2054" placeholder="SELECT PUNTO..contenidos..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leccion_central.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leccion_central.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="65" selection-start="4729" selection-end="4729" vertical-scroll-proportion="-4.882353" vertical-offset="1417" max-vertical-offset="6630">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1382447756000" expanded="true" signature="1412:1498" placeholder="SELECT PUNTO..contenidos..." />
+                <marker date="1382447756000" expanded="true" signature="1757:1806" placeholder="SELECT * FRO..leccion..." />
+                <marker date="1382447756000" expanded="true" signature="2240:2294" placeholder="SELECT TITUL..leccion..." />
+                <marker date="1382447756000" expanded="true" signature="2879:2961" placeholder="SELECT * FRO..contenidos..." />
+                <marker date="1382447756000" expanded="true" signature="3030:3112" placeholder="SELECT * FRO..contenidos..." />
+                <marker date="1382447756000" expanded="true" signature="5368:5441" placeholder="SELECT * FRO..tipo_respuestas..." />
+                <marker date="1382447756000" expanded="true" signature="15920:15994" placeholder="SELECT * FRO..contenidos..." />
+                <marker date="1382447756000" expanded="true" signature="17378:17430" placeholder="SELECT * FRO..respuestas..." />
+                <marker date="1382447756000" expanded="true" signature="18034:18098" placeholder="SELECT lecci..usuarios..." />
+                <marker date="1382447756000" expanded="true" signature="18293:18413" placeholder="UPDATE usuar..." />
+                <marker date="1382447756000" expanded="true" signature="18870:18958" placeholder="SELECT * FRO..contenidos..." />
+                <marker date="1382447756000" expanded="true" signature="19124:19190" placeholder="SELECT lecci..usuarios..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="evaluaciones_central.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/evaluaciones_central.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="51" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.5368421" vertical-offset="765" max-vertical-offset="1513">
+              <folding>
+                <marker date="1400085000077" expanded="true" signature="216:282" placeholder="SELECT lecci..usuarios..." />
+                <marker date="1400085000077" expanded="true" signature="1001:1071" placeholder="select * fro..leccion..." />
+                <marker date="1400085000077" expanded="true" signature="1715:1837" placeholder="SELECT * FRO..contenidos..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="682" column="25" selection-start="14125" selection-end="14125" vertical-scroll-proportion="0.0" vertical-offset="11457" max-vertical-offset="13073">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/inicio_central.php" />
+        <option value="$PROJECT_DIR$/inicio.php" />
+        <option value="$PROJECT_DIR$/descargas_central_old.php" />
+        <option value="$PROJECT_DIR$/estructura.php" />
+        <option value="$PROJECT_DIR$/descargas_central.php" />
+        <option value="$PROJECT_DIR$/lib/main.js" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/lecciones_central.php" />
+        <option value="$PROJECT_DIR$/evaluaciones_central.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1040" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wcollege" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clases" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistory" value="M" />
+    <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4da8949-ff13-4f1e-b000-87e55edebc60" name="Default" comment="" />
+      <created>1399659114591</created>
+      <updated>1399659114591</updated>
+    </task>
+    <task id="LOCAL-00001" summary="se actualiza el sistema">
+      <created>1399671348570</created>
+      <updated>1399671348570</updated>
+    </task>
+    <task id="LOCAL-00002" summary="se actualiza se crea el area de descargas">
+      <created>1399930258792</created>
+      <updated>1399930258792</updated>
+    </task>
+    <task id="LOCAL-00003" summary="se actualiza el modulo de evaluaciones y el de descargas">
+      <created>1400020036524</created>
+      <updated>1400020036524</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18652344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="se actualiza el sistema" />
+    <MESSAGE value="se actualiza se crea el area de descargas" />
+    <MESSAGE value="se actualiza el modulo de evaluaciones y el de descargas" />
+    <option name="LAST_COMMIT_MESSAGE" value="se actualiza el modulo de evaluaciones y el de descargas" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lecciones_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="9" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.0" vertical-offset="1445" max-vertical-offset="1547">
+          <folding>
+            <marker date="1400019803038" expanded="true" signature="298:319" placeholder="SELECT * FRO..leccion..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contacto_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="31" selection-start="9886" selection-end="9886" vertical-scroll-proportion="0.0" vertical-offset="2703" max-vertical-offset="4828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cont_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="574" column="15" selection-start="11422" selection-end="11422" vertical-scroll-proportion="0.0" vertical-offset="9349" max-vertical-offset="10081">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="22" selection-start="4044" selection-end="4044" vertical-scroll-proportion="0.0" vertical-offset="3163" max-vertical-offset="3859">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cont_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contacto_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://PHP/\phpbb_feed_forums">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>PHP</ID>
+          <OriginalElement>\phpbb_feed_forums</OriginalElement>
+          <nodes>
+            <node x="" y="">\phpbb_feed_factory</node>
+            <node x="" y="">\phpbb_feed_topics</node>
+            <node x="" y="">\phpbb_feed</node>
+            <node x="" y="">\imagen</node>
+            <node x="" y="">\phpbb_feed_news</node>
+            <node x="" y="">\phpbb_feed_forums</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="210.0" y="126.0" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicio_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/descargas_central_old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="76" selection-start="10700" selection-end="10760" vertical-scroll-proportion="-14.384615" vertical-offset="1734" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="47" selection-start="807" selection-end="810" vertical-scroll-proportion="41.666668" vertical-offset="2448" max-vertical-offset="4964">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inicio_old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="483" column="66" selection-start="26066" selection-end="26066" vertical-scroll-proportion="-10.807693" vertical-offset="7930" max-vertical-offset="8500">
+          <folding>
+            <marker date="1398453763237" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..leccion..." />
+            <marker date="1398453763237" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..leccion..." />
+            <marker date="1398453763237" expanded="true" signature="-1:-1" placeholder="UPDATE usuar..." />
+            <marker date="1398453763237" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..usuarios..." />
+            <marker date="1398453763237" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..usuarios..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/descargas_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="45" selection-start="204" selection-end="204" vertical-scroll-proportion="0.2982456" vertical-offset="0" max-vertical-offset="3043">
+          <folding>
+            <element signature="e#6#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.942953" vertical-offset="84" max-vertical-offset="799">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="682" column="25" selection-start="14125" selection-end="14125" vertical-scroll-proportion="0.0" vertical-offset="11457" max-vertical-offset="13073">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecciones_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="60" selection-end="362" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1547">
+          <folding>
+            <marker date="1400019803038" expanded="true" signature="298:319" placeholder="SELECT * FRO..leccion..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluaciones_central_old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="30" selection-start="1796" selection-end="1796" vertical-scroll-proportion="-11.115385" vertical-offset="306" max-vertical-offset="1241">
+          <folding>
+            <marker date="1397492491000" expanded="true" signature="937:1003" placeholder="SELECT lecci..usuarios..." />
+            <marker date="1397492491000" expanded="true" signature="1103:1124" placeholder="SELECT * FRO..leccion..." />
+            <marker date="1397492491000" expanded="true" signature="1976:2054" placeholder="SELECT PUNTO..contenidos..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leccion_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="65" selection-start="4729" selection-end="4729" vertical-scroll-proportion="-4.882353" vertical-offset="1417" max-vertical-offset="6630">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1382447756000" expanded="true" signature="1412:1498" placeholder="SELECT PUNTO..contenidos..." />
+            <marker date="1382447756000" expanded="true" signature="1757:1806" placeholder="SELECT * FRO..leccion..." />
+            <marker date="1382447756000" expanded="true" signature="2240:2294" placeholder="SELECT TITUL..leccion..." />
+            <marker date="1382447756000" expanded="true" signature="2879:2961" placeholder="SELECT * FRO..contenidos..." />
+            <marker date="1382447756000" expanded="true" signature="3030:3112" placeholder="SELECT * FRO..contenidos..." />
+            <marker date="1382447756000" expanded="true" signature="5368:5441" placeholder="SELECT * FRO..tipo_respuestas..." />
+            <marker date="1382447756000" expanded="true" signature="15920:15994" placeholder="SELECT * FRO..contenidos..." />
+            <marker date="1382447756000" expanded="true" signature="17378:17430" placeholder="SELECT * FRO..respuestas..." />
+            <marker date="1382447756000" expanded="true" signature="18034:18098" placeholder="SELECT lecci..usuarios..." />
+            <marker date="1382447756000" expanded="true" signature="18293:18413" placeholder="UPDATE usuar..." />
+            <marker date="1382447756000" expanded="true" signature="18870:18958" placeholder="SELECT * FRO..contenidos..." />
+            <marker date="1382447756000" expanded="true" signature="19124:19190" placeholder="SELECT lecci..usuarios..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluaciones_central.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="51" selection-start="2527" selection-end="2527" vertical-scroll-proportion="0.5368421" vertical-offset="765" max-vertical-offset="1513">
+          <folding>
+            <marker date="1400085000077" expanded="true" signature="216:282" placeholder="SELECT lecci..usuarios..." />
+            <marker date="1400085000077" expanded="true" signature="1001:1071" placeholder="select * fro..leccion..." />
+            <marker date="1400085000077" expanded="true" signature="1715:1837" placeholder="SELECT * FRO..contenidos..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

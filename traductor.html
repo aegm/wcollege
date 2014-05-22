@@ -1,0 +1,101 @@
+<!--********************************************** JQUERY UI ***********************************************-->
+
+<!--script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+<link href="http://code.jquery.com/ui/1.8.17/themes/flick/jquery-ui.css" type="text/css" media="all" rel="stylesheet">
+
+<!--********************************************************************************************************-->
+
+<!--script type="text/javascript">
+$(document).ready(function(){
+	$.ajaxSetup({timeout: 10000});
+	$("#btn_traducir").button().click(function(){
+		$(this).button('disable');
+		$('#traductor_errores').fadeOut(2000);
+		$('#traductor_cargar').show();
+		var q = $('#traductor_q').val();
+		var source = $('#traductor_source').val();
+		var target = $('#traductor_target').val();
+		var apiKey = "AIzaSyDb8b7VDk4uT7P3BM78QGEjM6oZQ8IAf3E";
+		var format = 'text';
+		
+		//var apiurl = "https://www.googleapis.com/language/translate/v2?key=" + apiKey + "&source=" + source + "&target=" + target + "&q=" + q;
+		var apiurl = 'https://www.googleapis.com/language/translate/v2';
+
+		$.get(apiurl,{key: apiKey, q: q, source: source, target:target, format:format}, function(data){
+			var traducido = '';
+			if(!data.error)
+			{
+				$.each(data.data.translations, function (index, traductor){
+					traducido += traductor.translatedText+'\n';
+				});
+				$('#traductor_q').val(traducido);
+			}
+			else
+			{
+				var mensaje = '';
+				switch(data.error.code)
+				{
+					case 400:
+						mensaje = 'Solicitud incorrecta';
+					break;
+					case 403:
+						mensaje = 'No tiene permisos';
+					break;
+					default:
+						mensaje = data.error.message;
+				}
+				$('#traductor_mensaje').html('<strong>¡Error! </strong>'+mensaje);
+				$('#traductor_errores').show();
+			}
+		},"jsonp")
+		.complete(function(Request, errortype){
+			$("#btn_traducir").button('enable');
+			$('#traductor_cargar').hide();
+		}).error(function(objRequest, errortype){
+			$('#traductor_mensaje').html('<strong>¡Error! </strong>Verifique su conexión a internet');
+			$('#traductor_errores').show();
+		});
+	});
+	$('#traductor_cambiar_idioma').click(function(){
+		var source = $('#traductor_source').val();
+		var target = $('#traductor_target').val();
+		$('#traductor_source').val(target);
+		$('#traductor_target').val(source);
+	
+	});
+});
+</script>
+<!--div class="ui-widget">
+   <form class="traductor">
+      <p>
+         <textarea id="traductor_q" style="width:100%; height:120px;"></textarea>
+      </p>
+      <p>
+         <select id="traductor_source" style="width:70px">
+            <option value="en">inglés</option>
+            <option value="es">español</option>
+         </select>
+         <span id="traductor_cambiar_idioma" class="arrow" style="padding:5px; cursor:pointer; font-size:20px">»</span>
+         <select id="traductor_target" style="width:70px">
+            <option value="es">español</option>
+            <option value="en">inglés</option>
+         </select>
+      </p>
+      <div>
+         <button type="button" class="gg-button" id="btn_traducir">Traducir</button>
+         <div id="traductor_cargar" style="float:right; display:none;"><img src="images/cargar.gif" alt="cargando"></div>
+      </div>
+   </form>
+   <div id="traductor_errores" class="ui-widget" style="margin-top:10px; display:none;">
+      <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+         <p>
+         	<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 
+         	<span id="traductor_mensaje"></span>
+        	</p>
+      </div>
+	</div>
+</div*-->
+<div>
+<script src="//www.gmodules.com/ig/ifr?url=http://www.gstatic.com/ig/modules/dictionary/dictionary_v2.xml&amp;up_sl=es&amp;up_tl=en&amp;up_default_text=&amp;synd=open&amp;w=190&amp;h=200&amp;title=Traductor+wcollege&amp;lang=en&amp;country=ALL&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>    
+</div>
