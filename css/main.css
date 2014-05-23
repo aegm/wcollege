@@ -256,6 +256,18 @@ h1,h2,h3,h4,h5,h6{
     background: #444444;
     color: #fff;
 }
+
+.header .contact > .chat {
+    text-shadow: 1px 1px 1px blue , 1px 1px 5px #fff;
+    font-size: 24px;
+    text-decoration: blink;
+    cursor: pointer;
+}
+.header .contact > .chat.on {
+    color: #1a74bb;/*color del texto al cambiar*/
+    text-shadow: 1px 1px 1px #ef454b , 1px 1px 5px #fff;
+}
+
 /* ======= FlexSlider ======= */
 .flexslider {
     -webkit-border-radius: 0;

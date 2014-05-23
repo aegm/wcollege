@@ -85,7 +85,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                             </li>
                         </ul>
                         <div class="contact pull-right">
-                            <p class="phone"><i class="fa fa-phone"></i> 0800 123 4567 </p>
+                            <p id="blink" class="chat"><i class="fa fa-wechat"></i> Chat Online! </p>
                         </div>
                     </div>
                 </div>
@@ -275,9 +275,13 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
         <script type="text/javascript" src="plugins/gmaps/gmaps.js"></script>
         <script src="lib/main.js"></script>
         <?php
-        if ($_GET['lugar'] = "leccion") {
+        if ($_GET['lugar'] == "lecciones") {
             echo '<script type="text/javascript" src="lib/jwplayer/jwplayer.js"></script>';
             echo '<script src="lib/leccion.js"></script>';
+        }
+        if ($_GET['lugar'] == "contacto") {
+          
+            echo '<script src="lib/maps.js"></script>';
         }
         ?>
 

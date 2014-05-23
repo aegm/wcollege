@@ -5,7 +5,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
                             Usuario
                         </a>
                     </h4>
@@ -35,7 +35,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
                             Evaluación
                         </a>
                     </h4>
@@ -70,7 +70,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTree">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTree" class="collapsed">
                             Reportes
                         </a>
                     </h4>
@@ -105,24 +105,20 @@
                         <table class="table">
                             <tr>
                                 <td>
-                                    <span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Agregar</a>
+                                    <span class="fa fa-file-text-o"></span><a href="inicio.php?lugar=alum_inscrip"> Alumnos Inscritos</a>
                                 </td>
                             </tr>
-                            <tr>
+                            <!--tr>
                                 <td>
-                                    <span class="glyphicon glyphicon-flash text-success"></span><a href="http://www.jquery2dotnet.com">Modificar</a>
+                                    <span class="fa fa-info"></span><a href="reporte_lec_aprobadas_estado&pag=1"> Invitaciones</a>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="glyphicon glyphicon-file text-info"></span><a href="http://www.jquery2dotnet.com">Eliminar</a>
-                                </td>
+                            </tr-->
 
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <!--div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
@@ -151,7 +147,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div-->
             <div style="clear: both;"></div>
         <?php } ?>
     </div></div>
