@@ -36,14 +36,14 @@
                         <button type="submit" class="btn btn-theme">Enviar</button>
                     </form>                  
                 </article><!--//contact-form-->
-                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                <!--aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
                     <section class="widget has-divider">
                         <h3 class="title">Descargar Folleto</h3>
                         <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
                         <a class="btn btn-theme" href="#"><i class="fa fa-download"></i>Download now</a>
                     </section><!--//widget-->   
 
-                    <section class="widget has-divider">
+                    <!--section class="widget has-divider">
                         <h3 class="title">Dirección Postal</h3>
                         <p class="adr">
                             <span class="adr-group">       
@@ -55,12 +55,12 @@
                         </p>
                     </section><!--//widget-->     
 
-                    <section class="widget">
+                    <!--section class="widget">
                         <h3 class="title">Consultas</h3>
                         <p class="tel"><i class="fa fa-phone"></i>Tel: 0800 123 4567</p>
                         <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">info@washingtoncollege.com.ve</a></p>
                     </section>   
-                </aside><!--//page-sidebar-->
+                </aside--><!--//page-sidebar-->
             </div><!--//page-row-->
             <div class="page-row">
                 <article class="map-section">

@@ -1,3 +1,11 @@
+<?php
+if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] !='admin') {
+    require_once('clases/db.class.php');
+    $bd = new db;
+    $sql = $bd->consulta("select * from vinscripcion where id_persona = " . $_SESSION['wc']['usuario'] . " order by fecha_inscripcion desc limit 1");
+    $usr = $bd->sig_reg($sql);
+}
+?>
 <div class="container">
     <div class="slider flexslider">
         <ul class="slides">
@@ -23,13 +31,27 @@
     <section class="aula-virtual box box-dark">
         <div class="col-md-9">
             <h1 class="section-heading">Aula Virtual</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Sed bibendum orci eget nulla mattis, quis viverra tellus porta. 
-                Donec vitae neque ut velit eleifend commodo. Maecenas turpis odio,
-                placerat eu lorem ut, suscipit commodo augue.  </p>
+            <p>Convierte en un Profesional Bilingue desde la comodidad de tu casa 
+                Ingresa Ahora al Sistema o contactanos para mayor Información la educacion del futuro en Tus Manos  </p>
         </div>
         <div class="col-md-3">
-            <a class="btn btn-cta" href="#"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>  
+            <?php
+            if (isset($_SESSION['wc']['usuario']) &&  $_SESSION['wc']['usuario'] !='admin') {
+                if ($usr) {
+                    switch ($usr['id_curso']) {
+                        case '5':
+                            echo '<a class="btn btn-cta" href="connect.php?nivel=1"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
+                            break;
+                        case '6':
+                            echo '<a class="btn btn-cta" href="connect.php?nivel=2"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
+                            break;
+                        case '7';
+                            echo '<a class="btn btn-cta" href="connect.php?nivel=3"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
+                            break;
+                    }
+                }
+            }
+            ?>
         </div>
     </section>
     <!--Aula Virtual-->

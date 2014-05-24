@@ -603,9 +603,90 @@ h1,h2,h3,h4,h5,h6{
 .chat_content{
     position:fixed;
     display: block;
-    top: 50%;
+    top: 30%;
+    left:0;
+    z-index: 999;
 }
 
+.chat_content ul.share-inner-wrp {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.chat_content li.button-wrap{
+    background: #ffffff;
+    background: -moz-linear-gradient(45deg, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#ffffff), color-stop(50%,#f1f1f1), color-stop(51%,#e1e1e1), color-stop(100%,#f6f6f6));
+    background: -webkit-linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+    background: -o-linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+    background: -ms-linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+    background: linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#ccc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 );
+    padding: 5px 1px 3px 5px;
+    display: block;
+    width: 210px;
+    margin: 0px 0px 1px -157px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.chat_content li.button-wrap > a {
+    //padding-right: 32px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    font-weight: bold;
+    color: #a09b9b;
+    text-decoration: none;
+    //font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+}
+.chat_content .home:before {
+    content: "\f015";
+    font-family: FontAwesome;
+    font-style: normal;
+    color: #ec1b23;
+    float: right;
+    display: block;
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+    opacity: .7;
+}
+
+.chat_content .tem:before {
+    content: "\f00b";
+    font-family: FontAwesome;
+    font-style: normal;
+    color: #ec1b23;
+    float: right;
+    display: block;
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+    opacity: .7;
+}
+
+.chat_content .admin:before {
+    content: "\f013";
+    font-family: FontAwesome;
+    font-style: normal;
+    color: #ec1b23;
+    float: right;
+    display: block;
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+    opacity: .7;
+}
+
+
+
+//======================================
 .nav-tabs {
     border-bottom: none;
     position: relative;

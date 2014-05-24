@@ -1,32 +1,32 @@
 <?php
 session_start();
-//print_r($_SESSION);
+
 require_once 'clases/db.class.php';
 if (isset($_POST['lugar']) && $_POST['lugar']) {
-    $_GET['lugar'] = $_POST['lugar'];
-    if (isset($_POST['lecc']) && $_POST['lecc'])
-        $_GET['lecc'] = $_POST['lecc'];
-    else
-        $_SESSION['wc']['nota_pagina'] = 0;
-    if (isset($_POST['libro']) && $_POST['libro'])
-        $_GET['libro'] = $_POST['libro'];
-    if (isset($_POST['dir']) && $_POST['dir'])
-        $_GET['dir'] = $_POST['dir'];
-    if (isset($_POST['pag']) && $_POST['pag'])
-        $_GET['pag'] = $_POST['pag'];
+$_GET['lugar'] = $_POST['lugar'];
+if (isset($_POST['lecc']) && $_POST['lecc'])
+$_GET['lecc'] = $_POST['lecc'];
+else
+$_SESSION['wc']['nota_pagina'] = 0;
+if (isset($_POST['libro']) && $_POST['libro'])
+$_GET['libro'] = $_POST['libro'];
+if (isset($_POST['dir']) && $_POST['dir'])
+$_GET['dir'] = $_POST['dir'];
+if (isset($_POST['pag']) && $_POST['pag'])
+$_GET['pag'] = $_POST['pag'];
 }else {
-    if (!(isset($_GET['lugar']) && $_GET['lugar']))
-        $_GET['lugar'] = 'inicio'; /* defino el index lugar si el usuario no ha seleccionado uno */
-    if (!(isset($_GET['lecc']) && $_GET['lecc'])) {
-        $_GET['lecc'] = '#'; /* defino el index lecc si el usuario no ha seleccionado uno */
-        $_SESSION['wc']['nota_pagina'] = 0;
-    }
-    if (!(isset($_GET['libro']) && $_GET['libro']))
-        $_GET['libro'] = '#';
-    if (!(isset($_GET['dir']) && $_GET['dir']))
-        $_GET['dir'] = '#';
-    if (!(isset($_GET['pag']) && $_GET['pag']))
-        $_GET['pag'] = '1';
+if (!(isset($_GET['lugar']) && $_GET['lugar']))
+$_GET['lugar'] = 'inicio'; /* defino el index lugar si el usuario no ha seleccionado uno */
+if (!(isset($_GET['lecc']) && $_GET['lecc'])) {
+$_GET['lecc'] = '#'; /* defino el index lecc si el usuario no ha seleccionado uno */
+$_SESSION['wc']['nota_pagina'] = 0;
+}
+if (!(isset($_GET['libro']) && $_GET['libro']))
+$_GET['libro'] = '#';
+if (!(isset($_GET['dir']) && $_GET['dir']))
+$_GET['dir'] = '#';
+if (!(isset($_GET['pag']) && $_GET['pag']))
+$_GET['pag'] = '1';
 }
 ?>
 <!DOCTYPE html>
@@ -115,88 +115,108 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                     <ul class="nav navbar-nav navbar-right">
                         <?php
                         if (!isset($_SESSION['wc']['session'])) {
-                            ?>
-                            <li class="dropdown nav-item">
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
-                                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <form class="form" role="form" method="post" action="form_process.php" accept-charset="UTF-8" id="login-nav">
-                                                    <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputEmail2">Matricula</label>
-                                                        <input type="text" class="form-control" id="txt_matricula" name="txt_matricula" placeholder="Matricula" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="sr-only" for="txt_clave" name="txt_clave">Password</label>
-                                                        <input type="password" name="txt_clave" class="form-control" id="exampleInputPassword2" placeholder="Clave" required>
-                                                    </div>
-                                                    <input type="hidden" name="form" value="login">
-                                                    <div class="form-group">
-                                                        <button type="submit" class="btn btn-success btn-block">Entrar</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <!--li>
-                                        <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
-                                        <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
-                                    </li-->
-                                </ul>
-                            </li>
-                        <?php } else { ?>
-
-                            <li class="dropdown nav-item light-blue">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-user fa-fw"></i>
-                                    Bienvenido <?php echo $_SESSION['wc']['nombre']; ?> 
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu" style="padding: 15px;min-width: 248px;">
+                        ?>
+                        <li class="dropdown nav-item">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                                <li>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <?php if ($_SESSION['wc']['nivel'] == 'E') { ?>
-                                                <li class="light-black">
-                                                    <a href="inicio.php?lugar=perfil"> 
-                                                        <i class="ace-icon fa fa-cog"></i>
-                                                        Mis Datos
-                                                    </a>
-                                                </li>    
-                                            <?php } ?>
-                                             <?php if ($_SESSION['wc']['nivel'] == 's')  {  ?>
-                                                <li class="light-black">
-                                                    <a href="inicio.php?lugar=administrador"> 
-                                                        <i class="ace-icon fa fa-cog"></i>
-                                                        Administrador
-                                                    </a>
-                                                </li>    
-                                            <?php } ?>
-                                            <!--li class="light-black">
-                                                <a href="#"> 
-                                                    <i class="ace-icon fa fa-user"></i>
-                                                    Perfil
-                                                </a>
-                                            </li-->
-                                            <li class="divider"></li>
-                                            <li class="light-black">
-                                                <a href="cerrar_session.php?lugar=inicio"> 
-                                                    <i class="ace-icon fa fa-power-off"></i>
-                                                    Logout
-                                                </a>
-                                            </li>
+                                            <form class="form" role="form" method="post" action="form_process.php" accept-charset="UTF-8" id="login-nav">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputEmail2">Matricula</label>
+                                                    <input type="text" class="form-control" id="txt_matricula" name="txt_matricula" placeholder="Matricula" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="txt_clave" name="txt_clave">Password</label>
+                                                    <input type="password" name="txt_clave" class="form-control" id="exampleInputPassword2" placeholder="Clave" required>
+                                                </div>
+                                                <input type="hidden" name="form" value="login">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-success btn-block">Entrar</button>
+                                                </div>
+                                            </form>
                                         </div>
-                                </ul>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <!--li>
+                                    <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+                                    <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+                                </li-->
+                            </ul>
+                        </li>
+                        <?php } else { ?>
+
+                        <li class="dropdown nav-item light-blue">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user fa-fw"></i>
+                                Bienvenido <?php echo $_SESSION['wc']['nombre']; ?> 
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" style="padding: 15px;min-width: 248px;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <?php if ($_SESSION['wc']['nivel'] == 'E' ) { ?>
+                                        <li class="light-black">
+                                            <a href="inicio.php?lugar=perfil"> 
+                                                <i class="ace-icon fa fa-cog"></i>
+                                                Mis Datos
+                                            </a>
+                                        </li>    
+                                        <?php } ?>
+                                        <?php if ($_SESSION['wc']['nivel'] == 's') { ?>
+                                        <li class="light-black">
+                                            <a href="inicio.php?lugar=administrador"> 
+                                                <i class="ace-icon fa fa-cog"></i>
+                                                Administrador
+                                            </a>
+                                        </li>    
+                                        <?php } ?>
+                                        <!--li class="light-black">
+                                            <a href="#"> 
+                                                <i class="ace-icon fa fa-user"></i>
+                                                Perfil
+                                            </a>
+                                        </li-->
+                                        <li class="divider"></li>
+                                        <li class="light-black">
+                                            <a href="cerrar_session.php?lugar=inicio"> 
+                                                <i class="ace-icon fa fa-power-off"></i>
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </div>
+                            </ul>
                             <?php } ?>    
                     </ul>
                 </div>
             </nav>
-            <!--div class="chat_content">
-                <img id="SnapABug_bImg" style="position: relative; left: -4px;" src="https://commondatastorage.googleapis.com/code.snapengage.com/btn/chat_orange_left_es.png" alt="Ayuda" border="0" onmouseover="SnapABug.buttonOver();" onmouseout="SnapABug.buttonOut();">
 
+            <div class="chat_content">
+                <!img id="SnapABug_bImg" style="position: relative; left: -4px;" src="https://commondatastorage.googleapis.com/code.snapengage.com/btn/chat_orange_left_es.png" alt="Ayuda" border="0" onmouseover="SnapABug.buttonOver();" onmouseout="SnapABug.buttonOut();">
+                <ul class="share-inner-wrp">
+                    <li class="home button-wrap">
+                        <a href="inicio.php?lugar=inicio">Inicio</a>
+                    </li>
+                    <li class="tem button-wrap">
+                        <a href="inicio.php?lugar=lecciones&lecc=#">Temario</a>
+                    </li>
+                    <?php
+                    if(isset($_SESSION['wc']['nivel'])) {
+                            ?>
+                    <li class="admin button-wrap">
+                        <?php if($_SESSION['wc']['nivel'] == 'E') { ?>
+                        <a href="inicio.php?lugar=perfil">Perfil</a>
+                        <?php } ?>
+                        <?php if($_SESSION['wc']['nivel'] == 's'){ ?>
+                        <a href="inicio.php?lugar=administrador">Administrador</a>
+                        <?php } ?>
+                    </li>
+                    <?php } ?>
+                </ul>
             </div>
-            <aside></aside-->
+            <!--aside></aside-->
             <!-------------Inicio del Contenido-->
             <?php
             include("cont_central.php");
@@ -274,33 +294,34 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
         <script type="text/javascript" src="plugins/gmaps/gmaps.js"></script>
         <script src="lib/main.js"></script>
+        <script src="plugins/fshare/fshare.js"></script>
         <?php
         if ($_GET['lugar'] == "lecciones") {
             echo '<script type="text/javascript" src="lib/jwplayer/jwplayer.js"></script>';
             echo '<script src="lib/leccion.js"></script>';
         }
         if ($_GET['lugar'] == "contacto") {
-          
+
             echo '<script src="lib/maps.js"></script>';
         }
         ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-                    (function(b, o, i, l, e, r) {
-                        b.GoogleAnalyticsObject = l;
-                        b[l] || (b[l] =
-                                function() {
-                                    (b[l].q = b[l].q || []).push(arguments)
-                                });
-                        b[l].l = +new Date;
-                        e = o.createElement(i);
-                        r = o.getElementsByTagName(i)[0];
-                        e.src = '//www.google-analytics.com/analytics.js';
-                        r.parentNode.insertBefore(e, r)
-                    }(window, document, 'script', 'ga'));
-                    ga('create', 'UA-XXXXX-X');
-                    ga('send', 'pageview');
+            (function(b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l;
+                b[l] || (b[l] =
+                        function() {
+                            (b[l].q = b[l].q || []).push(arguments)
+                        });
+                b[l].l = +new Date;
+                e = o.createElement(i);
+                r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X');
+            ga('send', 'pageview');
         </script>
     </body>
 </html>
