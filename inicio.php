@@ -37,8 +37,9 @@ $_GET['pag'] = '1';
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>Washington English College</title>
+        <meta name="description" content="Washington English College, Aprende Ingles desde la comodidad de tu tu casa es practico rapido y divertido. comienza hoy mismo.">
+        <meta name="keywords" content="cómo funciona Washington English College, aprende ingles online, aprende inglés on line,  washington english college">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">

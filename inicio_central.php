@@ -16,7 +16,7 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
                 </a>
             </div>
             <div class="modal-body">
-                <h4>Nueva Interfaz</h4>
+                <h4 class="">Nueva Interfaz</h4>
                 <p>Bienvenidos a Washington English College hemos realizdo algunos cambios para brindarte una mejor experiencia educativa.</p>
                 <p>Para Cualquier información o consulta ingresa al chat que se encuentra en la parte superior derecha. </p>
             </div>
