@@ -1,73 +1,46 @@
-<div class="container">
-    <ul class="mega-dropdown-menu row">
-        <li class="col-sm-3">
-            <ul>
-                <li class="dropdown-header">Videos</li>                            
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 1"></a>
-                            <h4><small>Summer dress floral prints</small></h4>                                        
-                            <button class="btn btn-primary" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       
-                        </div><!-- End Item -->
-                        <div class="item">
-                            <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a>
-                            <h4><small>Gold sandals with shiny touch</small></h4>                                        
-                            <button class="btn btn-primary" type="button">9,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>        
-                        </div><!-- End Item -->
-                        <div class="item">
-                            <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>
-                            <h4><small>Denin jacket stamped</small></h4>                                        
-                            <button class="btn btn-primary" type="button">49,99 €</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>      
-                        </div><!-- End Item -->                                
-                    </div><!-- End Carousel Inner -->
-                </div><!-- /.carousel -->
-                <li class="divider"></li>
-                <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-            </ul>
-        </li>
-        <li class="col-sm-3">
-            <ul>
-                <li class="dropdown-header">Dresses</li>
-                <li><a href="#">Unique Features</a></li>
-                <li><a href="#">Image Responsive</a></li>
-                <li><a href="#">Auto Carousel</a></li>
-                <li><a href="#">Newsletter Form</a></li>
-                <li><a href="#">Four columns</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Tops</li>
-                <li><a href="#">Good Typography</a></li>
-            </ul>
-        </li>
-        <li class="col-sm-3">
-            <ul>
-                <li class="dropdown-header">Jackets</li>
-                <li><a href="#">Easy to customize</a></li>
-                <li><a href="#">Glyphicons</a></li>
-                <li><a href="#">Pull Right Elements</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Pants</li>
-                <li><a href="#">Coloured Headers</a></li>
-                <li><a href="#">Primary Buttons & Default</a></li>
-                <li><a href="#">Calls to action</a></li>
-            </ul>
-        </li>
-        <li class="col-sm-3">
-            <ul>
-                <li class="dropdown-header">Accessories</li>
-                <li><a href="#">Default Navbar</a></li>
-                <li><a href="#">Lovely Fonts</a></li>
-                <li><a href="#">Responsive Dropdown </a></li>							
-                <li class="divider"></li>
-                <li class="dropdown-header">Newsletter</li>
-                <form class="form" role="form">
-                    <div class="form-group">
-                        <label class="sr-only" for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email">                                                              
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                </form>                                                       
-            </ul>
-        </li>
-    </ul>
-</div>
+  <?php	
+	if(isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'] )/*SI HAY SESION*/
+	{	
+		if(!(isset($bd)))
+		{
+			require_once('clases/db.class.php');
+			$bd=new db;
+		}
+	}else
+	{
+			if ( ( ( isset($_GET['lecc']) && ($_GET['lecc']) && ($_GET['lecc'])>1)|| ( isset($_GET['libro']) && ($_GET['libro']) && ($_GET['libro'])>1 ) ) ){
+			?><div class="error">Error: No es posible acceder a la Leccion <?php echo $_GET['lecc']?>. Primero debe iniciar sesión.</div><?php }
+	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+?> <div class="central1">
+	<div id="imagen_izq"><img src="images/imgVideos.jpg" width="152" height="234" /></div>
+    <div style="float:left; padding-left:40px;"><p>&nbsp;</p>
+				<?php	$sqllib = $bd->consulta ("SELECT libro FROM videos GROUP BY libro ORDER BY libro AND leccion ASC ");
+  						while($libro=$bd->sig_reg($sqllib))
+						{?><span class="title_libro"><?php echo ('Nivel'. $libro['libro']);
+								$sqlvid = $bd->consulta ("SELECT * FROM videos WHERE libro=$libro[libro] ORDER BY leccion ASC ");?></span>
+                                <div id="div_tabla">
+										<table cellspacing="20" id="tablaexterna"> 
+                                        <?php
+											$videos=true;
+                                        	while($videos)
+											{?>   
+                                                <tr align="left"><!--fila-->
+                                                	<?php 
+													$i=1;
+													while($i<=4 && ($videos=$bd->sig_reg($sqlvid)) )
+													{?>
+                                                   	    <td class="celda_interna_txt"><div class="producto_nom"><img src="images/img_Play.jpg" width="17" height="16" align="absmiddle" />&nbsp;<a href="inicio.php<?php echo "?lugar=videos&libro=$libro[libro]&lecc=$videos[leccion]&dir=videos/$libro[libro]_$videos[leccion].flv";?>"><?php echo $videos['nombre'];?></a></div></td>
+														<?php 
+                                                        $i++;
+													}?> 
+                                                </tr>
+                                      <?php }?>
+                                        </table>
+                                        <br /> 	
+        						</div><!--fin div tabla-->
+                 <?php 
+				 	 
+					  }?>
+</div></div>
