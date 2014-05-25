@@ -28,7 +28,7 @@ class db
 		$this->dbname=$dbname;
 		$this->dbuser=$dbuser;
 		$this->dbpass=$dbpass;
-		$this->dblink=@mysql_connect("$dbhost:$dbport",$dbuser,$dbpass);
+		$this->dblink=@mysql_connect("$dbhost:$dbport","$dbuser","$dbpass");
 		if($this->dblink)
 		{
 			if(mysql_select_db($this->dbname,$this->dblink))

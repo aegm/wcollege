@@ -273,7 +273,7 @@ $_GET['pag'] = '1';
                                                 <span class="country-name">Valencia - Venezuela</span>
                                             </span>
                                         </p>
-                                        <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i> 0800 123 4567 </p>
+                                        <!--p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i> 0800 123 4567 </p-->
                                         <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">info@washingtoncollege.com.ve</a></p>  
                                     </div> 
                                 </div>
@@ -323,8 +323,8 @@ $_GET['pag'] = '1';
                 e.src = '//www.google-analytics.com/analytics.js';
                 r.parentNode.insertBefore(e, r)
             }(window, document, 'script', 'ga'));
-            ga('create', 'UA-XXXXX-X');
-            ga('send', 'pageview');
+            ga('create', 'UA-3987227-9');
+            ga('send', '_trackPageview');
         </script>
     </body>
 </html>

@@ -20,7 +20,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <span class="fa fa-refresh"></span><a href="http://www.jquery2dotnet.com"> Modificar</a>
+                                    <span class="fa fa-refresh"></span><a href="inicio.php?lugar=modificar_usuario"> Modificar</a>
                                 </td>
                             </tr>
                             <tr>

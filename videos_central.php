@@ -1,26 +1,30 @@
 <?php
 if (isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'])/* SI HAY SESION */ {
-    if (!(isset($bd))) {
-        require_once('clases/db.class.php');
-        $bd = new db;
-    }
+    
 } else {
     if (( ( isset($_GET['lecc']) && ($_GET['lecc']) && ($_GET['lecc']) > 1) || ( isset($_GET['libro']) && ($_GET['libro']) && ($_GET['libro']) > 1 ))) {
         ?><div class="error">Error: No es posible acceder a la Leccion <?php echo $_GET['lecc'] ?>. Primero debe iniciar sesión.</div><?php
     }
 }
+if (!(isset($bd))) {
+    require_once('clases/db.class.php');
+    $bd = new db;
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 ?> <div class="central1">
+    <div class="col-lg-3">
     <div id="imagen_izq"><img src="images/imgVideos.jpg" width="152" height="234" /></div>
-    <div style="float:left; padding-left:40px;"><p>&nbsp;</p>
-<?php
+    </div>
+    <div style="float:left; padding-left:40px;" class="col-md-8"><p>&nbsp;</p>
+        <?php
         /* @var $sqllib type */
         $sqllib = $bd->consulta("SELECT libro FROM videos GROUP BY libro ORDER BY libro AND leccion ASC ")or die($sqllib);
-while ($libro = $bd->sig_reg($sqllib)) {
-    ?><span class="title_libro"><?php echo ('Nivel' . $libro['libro']);
-        $sqlvid = $bd->consulta("SELECT * FROM videos WHERE libro=$libro[libro] ORDER BY leccion ASC ");
-    ?></span>
+        while ($libro = $bd->sig_reg($sqllib)) {
+            ?><span class="title_libro"><?php
+            echo ('Nivel' . $libro['libro']);
+            $sqlvid = $bd->consulta("SELECT * FROM videos WHERE libro=$libro[libro] ORDER BY leccion ASC ");
+            ?></span>
             <div id="div_tabla">
                 <table cellspacing="20" id="tablaexterna"> 
                     <?php
@@ -38,10 +42,10 @@ while ($libro = $bd->sig_reg($sqllib)) {
                                     }
                                     ?> 
                         </tr>
-    <?php } ?>
+                    <?php } ?>
                 </table>
                 <br /> 	
             </div><!--fin div tabla-->
-            <?php }
+        <?php }
         ?>
     </div></div>

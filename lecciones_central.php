@@ -5,16 +5,16 @@ if (isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'])/* SI HAY SE
     $_SESSION['wc']['leccion'] = 0;
     /* aqui defino la clase y el objeto bd, ya que si no hay session, mas abajo la defino en login_de_usuario. */
     /* lo hago adentro de la condicion para que no se defina dos veces */
-    if (!(isset($bd))) {
-        require_once('clases/db.class.php');
-        $bd = new db;
-    }
 } else {
     if (isset($_GET['lecc']) && ($_GET['lecc']) && ($_GET['lecc'] > 1))/* SI NO HAY SESION Y LA LECCION SELECCIONADA ES MAYOR A 1 */ {
         ?><script type="text/javascript">
                     alert("Error: No es posible acceder a la Leccion <?php echo $_GET['lecc'] ?>. Primero debe iniciar sesi\xf3n.");
         </script><?php
     }
+}
+if (!(isset($bd))) {
+    require_once('clases/db.class.php');
+    $bd = new db;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $sql = $bd->consulta("SELECT * FROM leccion");
@@ -40,11 +40,11 @@ $leccion = $bd->sig_reg($sql);
                         while ($leccion && $nivel == $leccion['NIVEL']) {
                             ?>
                             <a class="txt_central" href="inicio.php<?php echo "?lugar=lecciones&lecc=$leccion[LECCION]&valor=1"; ?>">LECCIÓN <?php
-                                if ($leccion['LECCION'] <= 25)
-                                    echo $leccion['LECCION'] . " - " . $leccion['TITULO'];
-                                else
-                                    echo $leccion['leccion2'] . " - " . $leccion['TITULO'];
-                                ?></a>
+                    if ($leccion['LECCION'] <= 25)
+                        echo $leccion['LECCION'] . " - " . $leccion['TITULO'];
+                    else
+                        echo $leccion['leccion2'] . " - " . $leccion['TITULO'];
+                            ?></a>
                             <img id="<?php echo $leccion['audio_leccion'] ?>" class="audio_lesson" src="images/audio.png" width="20px" height="20px"/>
                             <br />
 
