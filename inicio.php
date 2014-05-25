@@ -137,7 +137,7 @@ $_GET['pag'] = '1';
                                                 </div>
                                                 <input type="hidden" name="form" value="login">
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-success btn-block">Entrar</button>
+                                                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
                                                 </div>
                                             </form>
                                         </div>
