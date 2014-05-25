@@ -78,7 +78,7 @@ $_GET['pag'] = '1';
                                 <a>Donde Estamos</a>
                             </li>
                             <li class="divider">
-                                <a href="inicio.php?lugar=galeria">Galeria</a>
+                                <a href="#">Galeria</a>
                             </li>
                             <li class="">
                                 <a href="inicio.php?lugar=contacto"> Contactenos</a>
@@ -284,7 +284,7 @@ $_GET['pag'] = '1';
                 <div class="bottom-bar">
                     <div class="container">
                         <div class="row">
-                            <small class="copyright col-md-12 col-sm-12 col-xs-12">Copyright 2010 Washington English Institute RIF: J-31541069-9 | Todos los derechos reservados <a href="#">Donec sed odio</a></small>
+                            <small class="copyright col-md-12 col-sm-12 col-xs-12">Copyright 2010 Washington English Institute RIF: J-31541069-9 | Todos los derechos Reservados <!--a href="#">Donec sed odio</a--></small>
                         </div>
                     </div>
                 </div>

@@ -15,11 +15,11 @@ class user {
     public function __construct() {
         $this->con = new db;
         if (isset($_SESSION[SISTEMA]['usuario'])) {
-            $this->usuario = $_SESSION[SISTEMA]['session']['usuario'];
-            $this->nombre = $_SESSION[SISTEMA]['session']['nombre'];
-            $this->ultima = $_SESSION[SISTEMA]['session']['ultima'];
-            $this->session = $_SESSION[SISTEMA]['session']['session'];
-            $this->standby = $_SESSION[SISTEMA]['session']['standby'];
+            $this->usuario = $_SESSION[SISTEMA]['usuario'];
+            $this->nombre = $_SESSION[SISTEMA]['nombre'];
+            $this->ultima = $_SESSION[SISTEMA]['ultima'];
+            $this->session = $_SESSION[SISTEMA]['session'];
+            $this->standby = $_SESSION[SISTEMA]['standby'];
             $this->mensaje = "Se cargo el usuario desde la session:";
         } else
             $this->session = FALSE;

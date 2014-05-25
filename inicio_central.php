@@ -6,6 +6,29 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
     $usr = $bd->sig_reg($sql);
 }
 ?>
+<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <a class="" data-dismiss="modal">
+                    <img src="images/logoWEC.png">
+                </a>
+            </div>
+            <div class="modal-body">
+                <h4>Nueva Interfaz</h4>
+                <p>Bienvenidos a Washington English College hemos realizdo algunos cambios para brindarte una mejor experiencia educativa.</p>
+                <p>Para Cualquier información o consulta ingresa al chat que se encuentra en la parte superior derecha. </p>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group">
+                     <button class="btn btn-danger" data-dismiss="modal">Continuar</button>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div>
+</div>
 <div class="container">
     <div class="slider flexslider">
         <ul class="slides">
@@ -70,8 +93,8 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
                         <div class="col-md-6 news-item">
                             <h2 class="title"><a href="news-single.html">Clases Online!</a></h2>
                             <p>Bienvenidos a Washington English College esta nueva interfaz te brindara una mejor experiencia y asi puedas alcanzar tus objetivos como profesional Bilingue .</p>
-                            <a class="read-more" href="news-single.html">Leer Mas <i class="fa fa-chevron-right"></i></a>
-                            <img class="thumb" src="" alt="">
+                            <a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a>
+                            <img class="thumb" src="images/principal.png" alt="" style="width: 160px; height: 125px;">
                         </div><!--//news-item-->
                         <div class="col-md-6 news-item">
                             <h2 class="title"><a href="news-single.html">Videos Online</a></h2>
