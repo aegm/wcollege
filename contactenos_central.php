@@ -28,9 +28,7 @@ Pais: $pais
 Ciudad: $ciudad 
 Telefono: $telf 
 
-Comentario: $coment 
-
-                                                   ";
+Comentario: $coment";
 												   $para1='info@washingtoncollege.com.ve';
 												  /* $para2='';
 												   $paratotal="$para1, $para2";*/

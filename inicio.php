@@ -85,7 +85,8 @@ $_GET['pag'] = '1';
                             </li>
                         </ul>
                         <div class="contact pull-right">
-                            <p id="blink" class="chat"><i class="fa fa-wechat"></i> Chat Online! </p>
+                            <a href="http://chatserver.comm100.com/BBS.aspx?siteId=29538&planId=622" onclick=" comm100_Chat();return false; " id="blink" class="chat"><i class="fa fa-wechat"></i> Chat Online! </a>
+                            <script src="http://chatserver.comm100.com/js/LiveChat.js?siteId=29538&planId=622"type="text/javascript"></script>
                         </div>
                     </div>
                 </div>
@@ -99,6 +100,7 @@ $_GET['pag'] = '1';
                         <li class="nav-item">
                             <a href="inicio.php?lugar=lecciones&lecc=#">Temario</a>
                         </li>
+                        <?php if(isset($_SESSION['wc']['session']) && $_SESSION['wc']['session']){ ?>
                         <li class="nav-item">
                             <a href="inicio.php?lugar=descargas">Descargas</a>
                         </li>
@@ -108,6 +110,7 @@ $_GET['pag'] = '1';
                         <li class="nav-item">
                             <a href="inicio.php?lugar=vocabulario">Vocabulario</a>
                         </li>
+                          <?php }  ?>
                         <li class="nav-item">
                             <a href="inicio.php?lugar=videos">Videos</a>
                         </li>

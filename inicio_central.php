@@ -14,7 +14,9 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] !='admin') {
                 <p class="flex-caption">
                     <span class="main">Descubre nuestros cursos en Linea</span>
                     <br>
-                    <span class="secondary clearfix"></span>
+                    <span class="secondary clearfix">
+                        Washintong College te brinda la oportunidad de ser un profesional bilingue con con nuestros cursos. 
+                    </span>
                 </p>
             </li>
             <li>
