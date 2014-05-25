@@ -14,9 +14,8 @@ require_once 'clases/user.class.php';
 function login($txt_matricula, $txt_clave) {
     $user = new user();
     if (!$user->login($txt_matricula, $txt_clave)) {
-        die("asd");
+        
     } else {
-        die("asd");
         return 'inicio.php';
     }
 }
