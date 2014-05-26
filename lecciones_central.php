@@ -39,7 +39,7 @@ $leccion = $bd->sig_reg($sql);
                         $nivel = $leccion['NIVEL'];
                         while ($leccion && $nivel == $leccion['NIVEL']) {
                             ?>
-                            <a class="txt_central" href="inicio.php<?php echo "?lugar=lecciones&lecc=$leccion[LECCION]&valor=1"; ?>">LECCIÓN <?php
+                            <a class="txt_central" href="inicio.php<?php echo "?lugar=leccion&lecc=$leccion[LECCION]&valor=1"; ?>">LECCIÓN <?php
                     if ($leccion['LECCION'] <= 25)
                         echo $leccion['LECCION'] . " - " . $leccion['TITULO'];
                     else
