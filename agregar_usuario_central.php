@@ -49,11 +49,16 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
             $bd = new db;
         }
 
-        if (isset($_POST['agregar']) && $_POST['agregar']) {
-            $sql = $bd->consulta("SELECT * FROM usuarios WHERE contrato = '$_POST[contrato]'");
-            $error = 0;
+        if ($_GET['estatus'] == "registrado") {
+            $sql = $bd->consulta("SELECT * FROM usuarios WHERE contrato = '$_GET[contrato]'");
             if ($linea = $bd->sig_reg($sql)) {
-                ?> <p>"ERROR: Contrato Repetido"</p>	
+                $contrato = $_GET[contrato];
+                $clave = $linea['clave']
+                        ?>
+                <script type="text/javascript">
+                    alert("Usuario Agregado con Exito, CLAVE: <?php echo $clave; ?> ");
+                </script>
+               
                 <?php
                 $error = 1;
             }
@@ -73,7 +78,7 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
                 $bd->consulta("INSERT INTO usuarios (contrato,cedula,nombre,apellido,sexo,nivel,vencimiento,clave,activo,estado,ciudad,leccion_aprobada,pais) VALUES ('$_POST[contrato]','$_POST[cedula]','$_POST[nombre]','$_POST[apellido]','$_POST[sexo]','$_POST[nivel]','$vencimiento','$keygen','$_POST[activo]','$_POST[estado]','$_POST[ciudad]','$_POST[leccion_aprobada]','$_POST[pais]')");
                 ?>
                 <script type="text/javascript">
-                alert("Usuario Agregado con Exito, CLAVE: <?php echo $keygen; ?> ");
+                    alert("Usuario Agregado con Exito, CLAVE: <?php echo $keygen; ?> ");
                 </script>
                 <?php
                 unset($_POST['cedula']);
@@ -91,13 +96,18 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
             }
         }
         ?>
-        <form role='form' action="inicio.php" method="post" onsubmit="MM_validateForm('cedula', '', 'RisNum', 'nombre', '', 'R', 'apellido', '', 'R', 'contrato', '', 'RisNum', 'clave', '', 'RisNum');
+        <form role='form' action="form_process.php" method="post" onsubmit="MM_validateForm('cedula', '', 'RisNum', 'nombre', '', 'R', 'apellido', '', 'R', 'contrato', '', 'RisNum', 'clave', '', 'RisNum');
                 return document.MM_returnValue">
             <fieldset>
                 <legend>Agregar Usuario</legend>
                 <div class="form-group">
                     <label>C.I.:</label>
-                    <input class="form-control" name="cedula"  type="text" id="cedula" value="<?php if (isset($_POST['cedula'])) echo $_POST['cedula'] ?>" /></div>
+                    <input class="form-control" name="cedula"  type="text" id="cedula" value="<?php if (isset($_POST['cedula'])) echo $_POST['cedula'] ?>" />
+                </div>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input name="nombre" class="form-control"  type="text" id="nombre"value="<?php if (isset($_POST['nombre'])) echo $_POST['nombre'] ?>" />
+                </div>
                 <div class="form-group">
                     <label>Apellido</label>
                     <input name="apellido" class="form-control"  type="text" id="apellido"value="<?php if (isset($_POST['apellido'])) echo $_POST['apellido'] ?>" />
@@ -135,7 +145,7 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
                 </div>
                 <div class="form-group">
                     <label>Vencimiento</label>
-                    <input class="form-control" type="text" id="data"  readonly="readonly" name="vencimiento" value="<?php echo (date("d") . '-' . date("m") . '-' . (date("Y") + 1)); ?>"/>
+                    <input class="form-control" type="text" id="data"   name="vencimiento" value="<?php echo (date("d") . '-' . date("m") . '-' . (date("Y") + 1)); ?>"/>
                 </div>
                 <div class="form-group">
                     <input  type="radio" name="nivel" checked="checked" value="E" />Estaudiante 
@@ -158,6 +168,7 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
                 </div>
                 <input type="hidden" name="leccion_aprobada" value="0" />
                 <input type="hidden" name="lugar" value="<?php echo $_GET['lugar']; ?>" />
+                <input type="hidden" name="form" value="agregar-usuario" />
                 <input type="submit" class="btn btn-primary" name="agregar" value="Aceptar"  />
                 <?php
             } else {
@@ -166,6 +177,5 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
             ?>	
         </fieldset>
     </form>
-                  <br><br>
+    <br><br>
 </div>    
-  

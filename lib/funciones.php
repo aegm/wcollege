@@ -253,10 +253,9 @@
 	}
 	function RandomString($length=10,$uc=FALSE,$n=TRUE,$sc=FALSE)
 	{
-		$source = "abcdefghijklmnopqrstuvwxyz";
-		if($uc==1) $source .= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		$source = "1234567890";
+		
 		if($n==1) $source .= "1234567890";
-		if($sc==1) $source .= "|@#~$%()=^*+[]{}-_";
 		if($length>0)
 		{
 			$rstr = "";

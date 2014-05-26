@@ -65,7 +65,7 @@ $leccion = $bd->sig_reg($sql);
     <div id="player_audio"></div>
 </div>
 <script>
-    $('.audio_lesson').click(function() {
+    /*$('.audio_lesson').click(function() {
         var id = this.id.split('/');
         var carpeta = id[0];
         var cd = id[1];
@@ -95,5 +95,5 @@ $leccion = $bd->sig_reg($sql);
                 }
             }
         });
-    });
+    });*/
 </script>

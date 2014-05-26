@@ -1,12 +1,18 @@
-<div class="container">
+<div class="">
     <?php
     if ((isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'] ) || (isset($_GET['lecc']) && ($_GET['lecc']) && ($_GET['lecc'] == 1)))/* SI HAY SESION */ {
         ?>
-        <div id="imagen_izq"><img src="images/imgVideos.jpg" width="152" height="234" /></div>
-        <div id="middle" align="center">
+        <div class="col-md-3"> 
+            <div id="imagen_izq"><img src="images/imgVideos.jpg" width="152" height="234" /></div>
+        </div>    
+        <div class="col-md-8" id="middle" align="center">
             <br/>
             <br/>
             <?php
+            if (!(isset($bd))) {
+                require_once('clases/db.class.php');
+                $bd = new db;
+            }
             $sqltitulo = $bd->consulta("SELECT * FROM leccion WHERE NIVEL=$_GET[libro] AND leccion2=$_GET[lecc]");
             $titulo = $bd->sig_reg($sqltitulo);
             echo ('Nivel' . $_GET['libro']);

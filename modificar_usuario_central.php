@@ -40,17 +40,16 @@
 if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SESSION['wc']['nivel'] == 's' || $_SESSION['wc']['nivel'] == 'p')) {
     include('administrador_central.php');
     ?>	
-    <div class="col-md-8">
+    <div class="col-md-9">
 
-        <p><strong> &nbsp;Modificar Usuario</strong></p>
-        <div style="width:640px; float:left">	
 
-            <form action="inicio.php" method="post">
+        <form action="inicio.php" method="post">
+            <fieldset>
+                <legend>Modificar Usuario</legend>
                 <div class="form-group"> 
                     <label>
                         Contrato:
-                    </label>
-
+                    </label>    
                     <input class="form-control" type="text" name="contrato" value="<?php
                     if (isset($_GET['contrato']) && $_GET['contrato']) {
                         echo $_GET['contrato'];
@@ -62,8 +61,8 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                     <input class="btn btn-default" type="submit" name="buscar" value="Buscar"/>
                 </div>    
                 <input type="hidden" name="lugar" value="<?php echo $_GET['lugar']; ?>" />
-            </form>	
-        </div>
+            </fieldset>
+        </form>
         <?php
         // $lugar_value='modificar_usuario';
         //include('tabla.php');
@@ -184,18 +183,24 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                       if (isset($usuario) && $usuario['contrato']) {
                           if (($_SESSION['wc']['nivel'] == 's') || (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || ($_SESSION['wc']['nivel'] == 'p' && $usuario['nivel'] <> 'p')) && $usuario['nivel'] <> 's' && $usuario['nivel'] <> 'a')) {
                               ?>
+
                         <div id="formulario_adm">
-                            <div class="input_text">Contrato:
-                                <input name="contrato2"  type="text" id="contrato2" value="<?php echo $usuario['contrato'] ?>" readonly="readonly"/></div>
+
+                            <div class="input_text" class="form-group">
+                                <label>Contrato:</label>
+                                <input class="form-control" name="contrato2"  type="text" id="contrato2" value="<?php echo $usuario['contrato'] ?>" readonly="readonly"/>
+                            </div>
                             <?php
                             $vencimiento = substr($usuario['vencimiento'], 8, 2) . '-';
                             $vencimiento.=substr($usuario['vencimiento'], 5, 2) . '-';
                             $vencimiento.=substr($usuario['vencimiento'], 0, 4);
                             ?>
-                            <div class="input_text"> Vencimiento:
-                                <input  type="text" id="data" name="vencimiento" readonly="readonly" value="<?php echo $vencimiento ?>"/><br/>
+                            <div class="form-group"> 
+                                <label>Vencimiento:</label>
+                                <input class="form-control" type="text" id="data" name="vencimiento" readonly="readonly" value="<?php echo $vencimiento ?>"/><br/>
                                 <?php if ($_SESSION['wc']['nivel'] <> 'p') { ?>
-                                    <button id="trigger">...</button></div>
+                                <button class="btn btn-default" id="trigger">...</button>
+                                </div>
                                 <script type="text/javascript">
                                     Calendar.setup(
                                             {
@@ -210,20 +215,25 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                                 ?>
                             </div>
                         <?php } ?>
-                        <div class="input_text">C.I.:
-                            <input name="cedula"  type="text" id="cedula" value="<?php echo $usuario['cedula'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
-                        <div class="input_text">Nombre:
-                            <input name="nombre"  type="text" id="nombre" value="<?php echo $usuario['nombre'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?> /></div>
-                        <div class="input_text">Apellido:
-                            <input name="apellido"  type="text" id="apellido" value="<?php echo $usuario['apellido'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
+                        <div class="form-group">
+                            <label>C.I.:</label>
+                            <input class="form-control" name="cedula"  type="text" id="cedula" value="<?php echo $usuario['cedula'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                            <input name="nombre" class="form-control"type="text" id="nombre" value="<?php echo $usuario['nombre'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?> /></div>
+                        <div class="form-group">
+                            <label>Apellido:</label>
+                            <input class="form-control" name="apellido"  type="text" id="apellido" value="<?php echo $usuario['apellido'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
 
-                        <div class="input_text"> Sexo:
+                        <div class="form-group"> 
+                            <label>Sexo:</label>
                             M <input  type="radio" name="sexo"  value="M" <?php if (isset($usuario['sexo']) && $usuario['sexo'] == 'M') { ?>checked="chacked" <?php }if ($_SESSION['wc']['nivel'] == 'p') { ?> disabled="disabled"<?php } ?>/>
                             F  <input  type="radio" name="sexo" value="F" <?php if (isset($usuario['sexo']) && $usuario['sexo'] == 'F') { ?>checked="chacked" <?php }if ($_SESSION['wc']['nivel'] == 'p') { ?> disabled="disabled"<?php } ?>/>
                         </div>
                         <!--MODIFICADOR DEL PAIS-->
-                        <div class="input_text">Pais:
-                            <select id="pais" name="pais">
+                        <div class="form-group">
+                            <label>Pais:</label>
+                            <select class="form-control" id="pais" name="pais">
                                 <option value="">Seleccione</option>
                                 <?php
                                 $sql = $bd->consulta("select * from pais");
@@ -242,8 +252,9 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                         </div>  
 
                         <!--Estados-->
-                        <div class="input_text"> Estado:
-                            <select id="estado" name="estado">
+                        <div class="form-group"> 
+                            <label>Estado:</label>
+                            <select id="estado" name="estado" class="form-control">
                                 <option value="">Seleccione</option>
                                 <?php
                                 $sql = $bd->consulta("select * from estados where id_pais = " . $usuario['pais']);
@@ -260,8 +271,9 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                             </select>
                         </div>
                         <!--Ciudades -->
-                        <div class="input_text"> Ciudad:
-                            <select id="ciudades" name="ciudades">
+                        <div class="form-group"> 
+                            <label>Ciudad:</label>
+                            <select class="form-control" id="ciudades" name="ciudades">
                                 <option value="">Seleccione</option>
                                 <?php
                                 $sql = $bd->consulta("select * from ciudades where id_estado = " . $usuario['estado']);
@@ -278,10 +290,12 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                             </select>
                         </div>
 
-                        <div class="input_text"> Telefono Personal:
-                            <input name="telefonop"  type="text" id="telefonop" value="<?php echo $usuario2['telefonop'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
-                        <div class="input_text"> E-mail Personal:
-                            <input name="email"  type="text" id="email" value="<?php echo $usuario2['email'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
+                        <div class="form-group"> 
+                            <label>Telefono Personal:</label>
+                            <input class="form-control" name="telefonop"  type="text" id="telefonop" value="<?php echo $usuario2['telefonop'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
+                        <div class="form-group"> 
+                            <label>E-mail Personal:</label>
+                            <input class="form-control"name="email"  type="text" id="email" value="<?php echo $usuario2['email'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
                         <?php if ($_SESSION['wc']['nivel'] <> 'p') {
                             ?>
                             <div class="input_text"> Telefono recomendado 1:
@@ -293,8 +307,9 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'a' || $_SES
                             <div class="input_text"> E-mail recomendado 3:
                                 <input name="email3"  type="text" id="email3" value="<?php echo $usuario2['email2'] ?>" <?php if ($_SESSION['wc']['nivel'] == 'p') { ?>readonly="readonly"<?php } ?>/></div>
                         <?php } ?>
-                        <div class="input_text"> Lecciones Aprobadas:
-                            <input name="leccion_aprobada"  type="text" id="leccion_aprobada" value="<?php echo $usuario['leccion_aprobada'] ?>"/></div><br/>
+                        <div class="form-group"> 
+                            <label>Lecciones Aprobadas:</label>
+                            <input class="form-control" name="leccion_aprobada"  type="text" id="leccion_aprobada" value="<?php echo $usuario['leccion_aprobada'] ?>"/></div><br/>
                         <?php if ($_SESSION['wc']['nivel'] <> 'p') {
                             ?>
                             <?php if ($usuario['nivel'] <> 's') { ?>

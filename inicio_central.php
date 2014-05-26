@@ -35,19 +35,19 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
             <li>
                 <img src="images/slide-3.jpg" />
                 <p class="flex-caption">
-                    <span class="main">Descubre nuestros cursos en Linea</span>
+                    <span class="main">Capacitacion profesional Bilingue</span>
                     <br>
                     <span class="secondary clearfix">
-                        Washington English College te brinda la oportunidad de ser un profesional bilingue con  nuestros cursos. 
+                        Washington English College te brinda la oportunidad de ser un profesional bilingue. 
                     </span>
                 </p>
             </li>
             <li>
                 <img src="images/chat.jpg" />
                 <p class="flex-caption">
-                    <span class="main">Estudia desde la Comodidad desde Tu Casa</span>
+                    <span class="main">Estudia desde la Comodidad de Tu Casa</span>
                     <br>
-                    <span class="secondary clearfix">Aprende Ingles desde desde la comodidad de tu casa, Practico, Facil y Divertido </span>
+                    <span class="secondary clearfix">Aprende Inglés desde desde la comodidad de tu casa, Práctico, Fácil y Divertido </span>
                 </p>
             </li>
         </ul>
@@ -93,7 +93,7 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
                         <div class="col-md-6 news-item">
                             <h2 class="title"><a href="news-single.html">Clases Online!</a></h2>
                             <p>Bienvenidos a Washington English College esta nueva interfaz te brindara una mejor experiencia y asi puedas alcanzar tus objetivos como profesional Bilingue .</p>
-                            <a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a>
+                            <!--a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a-->
                             <img class="thumb" src="images/principal.png" alt="" style="width: 160px; height: 125px;">
                         </div><!--//news-item-->
                         <div class="col-md-6 news-item">
@@ -106,7 +106,7 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
                                 <embed type="application/x-shockwave-flash" id="player2" name="player2" src="player.swf" width="160" height="134" allowscriptaccess="always" allowfullscreen="true" flashvars="file=bienvenida.flv&amp;image=preview.jpg&amp;controlbar=none">
                             </object>
                             <p>Para facilitarte el acceso a nuestras clases en el lugar y el momento que quieras desde la comodidad de tu computadora.</p>
-                            <a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a>                
+                            <!--a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a-->                
                         </div><!--//news-item-->
 
                         <!--//news-item-->

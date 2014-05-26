@@ -51,7 +51,7 @@ a.btn-cta,
 }
 
 .btn-theme {
-    background: #6091ba;
+    background: #1a74bb;
     border: 1px solid #6091ba;
     color: #fff;
 }
@@ -439,12 +439,16 @@ h1,h2,h3,h4,h5,h6{
 
 /* ======= Footer ======= */
 .footer {
-    background: #444444;
+    background: #6091ba;
     color: #fff;
 }
 
 .footer p {
     color: #dcdcdc;
+}
+
+.footer a{
+    color: #fff;
 }
 .footer ul {
     padding-left: 0;
@@ -498,8 +502,10 @@ h1,h2,h3,h4,h5,h6{
     line-height: 3;
     text-align: center;
 }
-.footer .bottom-bar .copyright a:hover {
-    color: #84aac9;
+
+
+.footer p .email {
+    color: #fff;
 }
 
 #map {
@@ -620,7 +626,7 @@ h1,h2,h3,h4,h5,h6{
     background: -webkit-linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
     background: -o-linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
     background: -ms-linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
-    background: linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#ccc 100%);
+    background: linear-gradient(45deg, #ffffff 0%,#f1f1f1 50%,#6091ba 51%,#1a74bb 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 );
     padding: 5px 1px 3px 5px;
     display: block;
@@ -649,7 +655,7 @@ h1,h2,h3,h4,h5,h6{
     content: "\f015";
     font-family: FontAwesome;
     font-style: normal;
-    color: #ec1b23;
+    color: #fff;
     float: right;
     display: block;
     width: 34px;
@@ -662,7 +668,7 @@ h1,h2,h3,h4,h5,h6{
     content: "\f00b";
     font-family: FontAwesome;
     font-style: normal;
-    color: #ec1b23;
+    color: #fff;
     float: right;
     display: block;
     width: 34px;
@@ -675,7 +681,20 @@ h1,h2,h3,h4,h5,h6{
     content: "\f013";
     font-family: FontAwesome;
     font-style: normal;
-    color: #ec1b23;
+    color: #fff;
+    float: right;
+    display: block;
+    width: 34px;
+    height: 34px;
+    font-size: 26px;
+    opacity: .7;
+}
+
+.chat_content .time:before {
+    content: "\f017";
+    font-family: FontAwesome;
+    font-style: normal;
+    color: #fff;
     float: right;
     display: block;
     width: 34px;

@@ -8,6 +8,7 @@ class user {
     public $nivel;
     public $nota_pagina;
     public $leccion;
+    public $clave;
     private $session = FALSE;
     public $mensaje;
     public $error;
@@ -25,41 +26,19 @@ class user {
             $this->session = FALSE;
     }
 
-    public function agregar($nombre, $usuario, $clave) {
-        if (!$usuario || !$nombre) {
-            $this->mensaje = "Los Campos con (*) son obligatorios...";
-            return false;
-        }
-        if (!$clave)
-            $clave = RandomString(5, 1, 1, 0);
-        $ultima = strtotime("now");
-        $this->con->query("INSERT INTO usuarios VALUES (
-		'$usuario',
-		'$clave',
-		'$nombre',
-		'$ultima')");
-        if ($this->con->num_error == 1062) {
-            $this->error = "error";
-            $this->mensaje = "El usuario ya existe, por favor elija otro";
-            return false;
-        }
-        if ($this->con->num_error == 0) {
-            $this->error = "ok";
-            $this->mensaje = "Se ha registrado el usuario con exito...";
-            $mensaje = "Usuario: $usuario <br>Clave: $clave";
-            /* if(!send_mail($correo,"freedombusiness@hotmail.com","Registro de usuario", $mensaje))
-              {
-              $this->mensaje="No se pudo enviar el correo en estos momentos...";
-              return false;
-              } */
-        } else {
-            $this->mensaje = "El usuario no se pudo registrar..." . $this->con->my_error;
-            return false;
-        }
+    public function agregar($cedula, $nombre, $apellido, $sexo, $nivel, $clave, $vencimiento, $email, $activo, $contrato, $estado, $ciudad, $leccion_aprobada, $pais) {
+        $vencimiento = substr($_POST['vencimiento'], 6, 4) . '-';
+        $vencimiento.=substr($_POST['vencimiento'], 3, 2) . '-';
+        $vencimiento.=substr($_POST['vencimiento'], 0, 2);
+        $keygen = ($contrato / 2 + intval($contrato / 3.3)) / 2;
+        $this->clave = $keygen = intval($keygen);
+        $this->usuario = $contrato;
+        $sql = $this->con->consulta("INSERT INTO usuarios (contrato,cedula,nombre,apellido,sexo,nivel,vencimiento,clave,activo,estado,ciudad,leccion_aprobada,pais) VALUES ('$contrato','$cedula','$nombre','$apellido','$sexo','$nivel','$vencimiento','$keygen','$activo','$estado','$ciudad','$leccion_aprobada','$pais')")or die("error");
+        return true;
     }
 
     public function eliminar($usuario) {
-        $this->con->query("DELETE FROM usuarios WHERE usuario='$usuario'");
+        $this->con->query("DELETE FROM usuarios WHERE usuario = '$usuario'");
         if ($this->con->num_error == 0) {
             $this->mensaje = "El usuario: $usuario, ha sido eliminado correctamente...";
             return true;
@@ -87,13 +66,14 @@ class user {
             return true;
         } else {
             $this->error = "error";
-            $this->mensaje = "El usuario y la contrase&ntilde;a son incorrectos...";
+            $this->mensaje = "El usuario y la contrase&ntilde;
+a son incorrectos...";
             return false;
         }
     }
 
     public function cargar() {
-        $users = $this->con->query("SELECT * FROM usuarios WHERE usuario='$this->usuario'");
+        $users = $this->con->query("SELECT * FROM usuarios WHERE usuario = '$this->usuario'");
         if ($user = $this->con->a($users)) {
             $this->nombre = $user['nombre'];
             $this->ultima = $user['ultima'];
@@ -140,14 +120,16 @@ class user {
             $this->mensaje = "No hay session...";
             $this->error = "error";
         } else {
-            $usuarios = $this->con->query("SELECT * FROM usuarios WHERE usuario='$this->usuario' AND clave='$clave_actual'");
+            $usuarios = $this->con->query("SELECT * FROM usuarios WHERE usuario = '$this->usuario' AND clave = '$clave_actual'");
             if (!$this->con->a($usuarios)) {
-                $this->mensaje = "La contrase&ntilde;a actual es incorrecta...";
+                $this->mensaje = "La contrase&ntilde;
+a actual es incorrecta...";
                 $this->error = "error";
                 return false;
             } else {
-                $this->con->query("UPDATE usuarios SET clave='$clave' WHERE usuario='$this->usuario'");
-                $this->mensaje = "Su contrase&ntilde;a ha sido cambiada con exito...";
+                $this->con->query("UPDATE usuarios SET clave = '$clave' WHERE usuario = '$this->usuario'");
+                $this->mensaje = "Su contrase&ntilde;
+a ha sido cambiada con exito...";
                 $this->error = "ok";
                 return true;
             }

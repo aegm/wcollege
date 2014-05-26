@@ -14,7 +14,7 @@ if (!(isset($bd))) {
 //
 ?> <div class="central1">
     <div class="col-lg-3">
-    <div id="imagen_izq"><img src="images/imgVideos.jpg" width="152" height="234" /></div>
+        <div id="imagen_izq"><img src="images/imgVideos.jpg" width="152" height="234" /></div>
     </div>
     <div style="float:left; padding-left:40px;" class="col-md-8"><p>&nbsp;</p>
         <?php
@@ -36,7 +36,7 @@ if (!(isset($bd))) {
                             $i = 1;
                             while ($i <= 4 && ($videos = $bd->sig_reg($sqlvid))) {
                                 ?>
-                                <td class="celda_interna_txt"><div class="producto_nom"><img src="images/img_Play.jpg" width="17" height="16" align="absmiddle" />&nbsp;<a href="inicio.php<?php echo "?lugar=videos&libro=$libro[libro]&lecc=$videos[leccion]&dir=videos/$libro[libro]_$videos[leccion].flv"; ?>"><?php echo $videos['nombre']; ?></a></div></td>
+                                <td class="celda_interna_txt"><div class="producto_nom"><img src="images/img_Play.jpg" width="17" height="16" align="absmiddle" />&nbsp;<a href="inicio.php<?php echo "?lugar=video&libro=$libro[libro]&lecc=$videos[leccion]&dir=videos/$libro[libro]_$videos[leccion].flv"; ?>"><?php echo $videos['nombre']; ?></a></div></td>
                                         <?php
                                         $i++;
                                     }

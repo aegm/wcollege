@@ -1,7 +1,7 @@
 
 <div class="col-md-3">
     <div class="panel-group" id="accordion">
-        <?php if ($_SESSION['wc']['nivel'] == 's') { ?>
+        <?php if ($_SESSION['wc']['nivel'] == 's' || $_SESSION['wc']['nivel'] == 'p' ) { ?>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
