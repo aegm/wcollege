@@ -259,7 +259,9 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-8">
-                                <div class="footer-col-inner">
+                                <img src="images/Title_traductor.jpg" style="padding:0px;"/>
+                                <?php include('traductor.html'); ?>
+                                <!--div class="footer-col-inner">
                                     <h3>Unete a nuestro Boletin Informativo</h3>
                                     <p>Suscríbete para recibir nuestro boletín semanal directamente en tu bandeja correo</p>
                                     <form class="subscribe-form">
@@ -269,7 +271,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                         <input class="btn btn-theme btn-subscribe" type="submit" value="Subscribe">
                                     </form>
 
-                                </div>        
+                                </div-->        
                             </div>
                             <div class="col-md-3 col-sm-4">
                                 <div class="footer-col-inner">
@@ -312,7 +314,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
         <script src="lib/main.js"></script>
         <script src="plugins/fshare/fshare.js"></script>
         <?php
-        if ($_GET['lugar'] == "lecciones") {
+        if ($_GET['lugar'] == "lecciones" || $_GET['lugar'] == "leccion") {
             echo '<script type="text/javascript" src="lib/jwplayer/jwplayer.js"></script>';
             echo '<script src="lib/leccion.js"></script>';
         }

@@ -49,7 +49,7 @@ if ((isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'] ) || (isset
             $nivel = $linea_leccion['NIVEL'];
             $lecc2 = $linea_leccion['leccion2'];
             $audio = $linea_leccion['audio_leccion'];
-            echo "<strong><p align='center'>NIVEL $nivel,  Lesson $lecc2 <img id='$audio' class='audio_lesson' src='images/audio.png'></p></strong>"; //n� de leccion
+            echo "<strong><p align='center'>NIVEL $nivel,  Lesson $lecc2 <img id='audio' class='audio_lesson' src='images/audio.png'></p></strong>"; //n� de leccion
             $sql = $bd->consulta("SELECT TITULO FROM leccion WHERE LECCION = $_GET[lecc] ");
             $titulo = $bd->sig_reg($sql);
             echo "<p align='center'><strong> $titulo[TITULO]</strong></p>"; //titulo de la leccion
@@ -248,7 +248,7 @@ if ((isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'] ) || (isset
                             &nbsp;<a class="txt_num_pag" href='inicio.php<?php echo "?lugar=$_GET[lugar]&lecc=$_GET[lecc]&pag=$pagsiguiente"; ?>'> Siguiente > </a>
                          <!--   &nbsp;&nbsp;<a class="txt_num_pag" href='inicio.php<?php echo "?lugar=$_GET[lugar]&lecc=$_GET[lecc]&pag=$num_puntos"; ?>'> >> </a> 		-->									  				  <?php } else { ?>
 
-                                                <!--  <a class="txt_num_pag" href='inicio.php<?php echo "?lugar=lecciones"; ?>'> Ir al Temario </a>--> 
+                                                                                <!--  <a class="txt_num_pag" href='inicio.php<?php echo "?lugar=lecciones"; ?>'> Ir al Temario </a>--> 
 
                             <?php
                         }
