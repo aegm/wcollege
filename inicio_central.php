@@ -2,9 +2,12 @@
 if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') {
     require_once('clases/db.class.php');
     $bd = new db;
-    $sql = $bd->consulta("select * from vinscripcion where id_persona = " . $_SESSION['wc']['usuario'] . " order by fecha_inscripcion desc limit 1");
+
+    $sql = $bd->consulta("select c.id from v_user_aula u, vcursos c where contrato = " . $_SESSION['wc']['usuario'] . " and u.aula = c.Libro");
     $usr = $bd->sig_reg($sql);
-}
+    $curso =  $usr['id'];
+    
+}   
 ?>
 <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -22,7 +25,7 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
             </div>
             <div class="modal-footer">
                 <div class="btn-group">
-                     <button class="btn btn-danger" data-dismiss="modal">Continuar</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Continuar</button>
                 </div>
             </div>
 
@@ -35,10 +38,10 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
             <li>
                 <img src="images/slide-3.jpg" />
                 <p class="flex-caption">
-                    <span class="main">Capacitacion profesional Bilingue</span>
+                    <span class="main">Capacitacion profesional Bilingüe</span>
                     <br>
                     <span class="secondary clearfix">
-                        Washington English College te brinda la oportunidad de ser un profesional bilingue. 
+                        Washington English College te brinda la oportunidad de ser un profesional Bilingüe. 
                     </span>
                 </p>
             </li>
@@ -47,7 +50,7 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
                 <p class="flex-caption">
                     <span class="main">Estudia desde la Comodidad de Tu Casa</span>
                     <br>
-                    <span class="secondary clearfix">Aprende Inglés desde desde la comodidad de tu casa, Práctico, Fácil y Divertido </span>
+                    <span class="secondary clearfix">Aprende Inglés desde la comodidad de tu casa, Práctico, Fácil y Divertido </span>
                 </p>
             </li>
         </ul>
@@ -56,24 +59,38 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
     <section class="aula-virtual box box-dark">
         <div class="col-md-9">
             <h1 class="section-heading">Aula Virtual</h1>
-            <p>Convierte en un Profesional Bilingue desde la comodidad de tu casa 
+            <p>Convierte en un Profesional Bilingüe desde la comodidad de tu casa 
                 Ingresa Ahora al Sistema o contactanos para mayor Información la educacion del futuro en Tus Manos  </p>
         </div>
         <div class="col-md-3">
             <?php
             if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') {
-                if ($usr) {
-                    switch ($usr['id_curso']) {
-                        case '5':
-                            echo '<a class="btn btn-cta" href="connect.php?nivel=1"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
-                            break;
-                        case '6':
-                            echo '<a class="btn btn-cta" href="connect.php?nivel=2"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
-                            break;
-                        case '7';
-                            echo '<a class="btn btn-cta" href="connect.php?nivel=3"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
-                            break;
+                $persona = $_SESSION['wc']['usuario'];
+                //$curso = $usr['id'];
+                $verficar = $bd->consulta("select * from inscripcion_curso i, vcurso_activo c where i.id_persona = '$persona' and i.id_curso = '$curso' and i.id_curso = c.id_curso");
+                //$usr = $bd->sig_reg($sql);
+                if ($bd->num_filas($verficar)) {
+                    //$usr = $bd->sig_reg($sql);
+                    if ($usr) {
+                        switch ($curso) {
+                            case '5':
+                                echo '<a class="btn btn-cta" href="connect.php?nivel=1"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
+                                break;
+                            case '6':
+                                echo '<a class="btn btn-cta" href="connect.php?nivel=2"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
+                                break;
+                            case '7';
+                                echo '<a class="btn btn-cta" href="connect.php?nivel=3"><i class="fa fa-play-circle"></i> Ingresar Ahora. </a>';
+                                break;
+                        }
                     }
+                } else {
+                    $sql = $bd->consulta("select * from  vcursos where id = '$curso'");
+                    $curso = $bd->sig_reg($sql);
+                    $id = $curso['id'];
+                    $pais = $curso['pais'];
+
+                    echo '<a class="btn btn-cta" onclick="inscribir(' . $persona . ',' . $id . ',' . $pais . ')"><i class="fa fa-play-circle"></i> Inscribirse Ahora. </a>';
                 }
             }
             ?>

@@ -79,7 +79,8 @@
 
 </div>
 <div id="ant_sig2">
-<?php $lugar = $lugar_value;
-include('ant_sig_2.php');
-?>
+    <?php
+    $lugar = $lugar_value;
+    include('ant_sig_2.php');
+    ?>
 </div>

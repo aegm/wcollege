@@ -1,5 +1,4 @@
 <div class="col-md-12">
-
     <div class="tabla" style="float:left;">
         <?php
         if (!(isset($bd))) {
@@ -91,5 +90,4 @@
     $lugar = $lugar_value;
     include('ant_sig.php');
     ?>
-</div
-<br><br><br>
+</div>

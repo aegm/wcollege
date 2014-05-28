@@ -80,7 +80,7 @@ if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'E' )) {
             </div>
             <div class="formulario_interno">
                 <?php ?>
-                <strong><a href="estadisticas.php">Ve Tu Progreso</a></strong></div> 
+                <strong><a href="inicio.php?lugar=progreso">Ve Tu Progreso</a></strong></div> 
         </div>
     </div>
     <div style="clear: both;"></div>

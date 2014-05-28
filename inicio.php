@@ -72,11 +72,11 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                     <div class="info col-md-4 col-sm-4">
 
                         <ul class="menu-top navbar-right">
-                            <li class="divider">
+                            <!--li class="divider">
                                 <a>El Instituto</a>
-                            </li>
+                            </li-->
                             <li class="divider">
-                                <a>Donde Estamos</a>
+                                <a id="where">Donde Estamos</a>
                             </li>
                             <li class="divider">
                                 <a href="#">Galeria</a>
@@ -88,7 +88,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                         <?php if (isset($_SESSION['wc']['session'])) { ?>
                             <div class="contact pull-right">
                                 <a href="http://chatserver.comm100.com/BBS.aspx?siteId=29538&planId=622" onclick=" comm100_Chat();
-                                        return false;
+                                            return false;
                                    " id="blink" class="chat"><i class="fa fa-wechat"></i> Chat Online! </a>
                                 <script src="http://chatserver.comm100.com/js/LiveChat.js?siteId=29538&planId=622"type="text/javascript"></script>
                             </div>
@@ -239,26 +239,26 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                 <div class="footer-content">
                     <div class="container">
                         <div class="row">
-                            <div class="footer-col col-md-3 col-sm-4">
-                                <div class="footer-col-inner">
-                                    <h3>Acerca De</h3>
-                                    <ul>
-                                        <li>
-                                            <a>
-                                                <i class="fa fa-caret-right"></i>
-                                                Politica de Privacidad
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a>
-                                                <i class="fa fa-caret-right"></i>
-                                                Terminos y condiciones
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-8">
+                            <!--div class="footer-col col-md-3 col-sm-4">
+                            <!--div class="footer-col-inner">
+                                <h3>Acerca De</h3>
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <i class="fa fa-caret-right"></i>
+                                            Politica de Privacidad
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <i class="fa fa-caret-right"></i>
+                                            Terminos y condiciones
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div-->
+                            <!--/div-->
+                            <div class="col-md-8 col-sm-8">
                                 <img src="images/Title_traductor.jpg" style="padding:0px;"/>
                                 <?php include('traductor.html'); ?>
                                 <!--div class="footer-col-inner">
@@ -281,8 +281,8 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                             <i class="fa fa-map-marker pull-left"></i>        
                                             <span class="adr-group pull-left">       
                                                 <span class="street-address">Washignton College</span><br>
-                                                <span class="region">Av. Bolivar Norte</span><br>
-                                                <span class="postal-code">Oficina</span><br>
+                                                <span class="region">Av. Bolivar Norte Torre Banaven</span><br>
+                                                <span class="postal-code">Oficina 222</span><br>
                                                 <span class="country-name">Valencia - Venezuela</span>
                                             </span>
                                         </p>
@@ -327,20 +327,20 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-                                (function(b, o, i, l, e, r) {
-                                    b.GoogleAnalyticsObject = l;
-                                    b[l] || (b[l] =
-                                            function() {
-                                                (b[l].q = b[l].q || []).push(arguments)
-                                            });
-                                    b[l].l = +new Date;
-                                    e = o.createElement(i);
-                                    r = o.getElementsByTagName(i)[0];
-                                    e.src = '//www.google-analytics.com/analytics.js';
-                                    r.parentNode.insertBefore(e, r)
-                                }(window, document, 'script', 'ga'));
-                                ga('create', 'UA-3987227-9');
-                                ga('send', '_trackPageview');
+                                    (function(b, o, i, l, e, r) {
+                                        b.GoogleAnalyticsObject = l;
+                                        b[l] || (b[l] =
+                                                function() {
+                                                    (b[l].q = b[l].q || []).push(arguments)
+                                                });
+                                        b[l].l = +new Date;
+                                        e = o.createElement(i);
+                                        r = o.getElementsByTagName(i)[0];
+                                        e.src = '//www.google-analytics.com/analytics.js';
+                                        r.parentNode.insertBefore(e, r)
+                                    }(window, document, 'script', 'ga'));
+                                    ga('create', 'UA-3987227-9');
+                                    ga('send', '_trackPageview');
         </script>
     </body>
 </html>

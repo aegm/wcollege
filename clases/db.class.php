@@ -9,7 +9,7 @@ define("DB_HOST","localhost");
 define("DB_NAME","wcollege");
 define("DB_USER","root");
 define("DB_PORT","3306");
-define("DB_PASS","1234");
+define("DB_PASS","");
 class db
 {
 	private $dbhost;
