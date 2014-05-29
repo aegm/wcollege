@@ -1,37 +1,93 @@
 <?php
+//print_r($_SESSION);
+if (isset($_SESSION['wc']['session'])) {
+    $bd = new db();
+    $usr = $_SESSION['wc']['usuario'];
+    $sql = $bd->consulta("select * from usuarios where contrato = '$usr'");
+    $valor = $bd->sig_reg($sql);
+
+
+    if ($valor['email']==null ||$valor['email'] == '' ) {
+        $nombre = $valor['nombre'];
+        $apellido = $valor['apellido'];
+        $usr = $valor['contrato'];
+        ?>
+        <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <a class="" data-dismiss="modal">
+                            <img src="images/logoWEC.png">
+                        </a>
+                    </div>    
+
+                    <div class="modal-body">
+                        <h4 class="">BIENVENIDO <?php echo $nombre . ' ' . $apellido ?></h4>
+                        <form action="form_process.php" method="POST">
+                            <fieldset>
+                                <legend>
+                                    Completa tu registro en el siguiente Formulario
+                                </legend>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input name ="txt_correo" class="form-control">
+                                </div>
+                                <input type="hidden" name="form" value="primera-vez" />
+                                <input type="hidden" name="usuario" value="<?php echo $usr; ?>" />
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary" />
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <?php
+    }
+} else {
+    ?>
+    <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <a class="" data-dismiss="modal">
+                        <img src="images/logoWEC.png">
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <h4 class="">Nueva Interfaz</h4>
+                    <p>Bienvenidos a Washington English College hemos realizdo algunos cambios para brindarte una mejor experiencia educativa.</p>
+                    <p>Para Cualquier información o consulta ingresa al chat que se encuentra en la parte superior derecha. </p>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button class="btn btn-danger" data-dismiss="modal">Continuar</button>
+                    </div>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div>
+    </div>
+<?php } ?>
+<?php
 if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') {
     require_once('clases/db.class.php');
     $bd = new db;
 
     $sql = $bd->consulta("select c.id from v_user_aula u, vcursos c where contrato = " . $_SESSION['wc']['usuario'] . " and u.aula = c.Libro");
     $usr = $bd->sig_reg($sql);
-    $curso =  $usr['id'];
-    
-}   
+    $curso = $usr['id'];
+}
 ?>
-<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
 
-            <div class="modal-header">
-                <a class="" data-dismiss="modal">
-                    <img src="images/logoWEC.png">
-                </a>
-            </div>
-            <div class="modal-body">
-                <h4 class="">Nueva Interfaz</h4>
-                <p>Bienvenidos a Washington English College hemos realizdo algunos cambios para brindarte una mejor experiencia educativa.</p>
-                <p>Para Cualquier información o consulta ingresa al chat que se encuentra en la parte superior derecha. </p>
-            </div>
-            <div class="modal-footer">
-                <div class="btn-group">
-                    <button class="btn btn-danger" data-dismiss="modal">Continuar</button>
-                </div>
-            </div>
-
-        </div><!-- /.modal-content -->
-    </div>
-</div>
 <div class="container">
     <div class="slider flexslider">
         <ul class="slides">

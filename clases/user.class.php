@@ -36,6 +36,11 @@ class user {
         $sql = $this->con->consulta("INSERT INTO usuarios (contrato,cedula,nombre,apellido,sexo,nivel,vencimiento,clave,activo,estado,ciudad,leccion_aprobada,pais) VALUES ('$contrato','$cedula','$nombre','$apellido','$sexo','$nivel','$vencimiento','$keygen','$activo','$estado','$ciudad','$leccion_aprobada','$pais')")or die("error");
         return true;
     }
+    
+    public function primeraVez($email,$usuario){
+        $sql = $this->con->consulta("UPDATE usuarios set email = '$email' where contrato = '$usuario'");
+        return true;
+    }
 
     public function eliminar($usuario) {
         $this->con->query("DELETE FROM usuarios WHERE usuario = '$usuario'");

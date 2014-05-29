@@ -2,6 +2,7 @@
 session_start();
 
 require_once 'clases/db.class.php';
+
 if (isset($_POST['lugar']) && $_POST['lugar']) {
     $_GET['lugar'] = $_POST['lugar'];
     if (isset($_POST['lecc']) && $_POST['lecc'])
@@ -57,6 +58,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
         <!--script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script-->
     </head>
     <body class="home-page">
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -88,7 +90,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                         <?php if (isset($_SESSION['wc']['session'])) { ?>
                             <div class="contact pull-right">
                                 <a href="http://chatserver.comm100.com/BBS.aspx?siteId=29538&planId=622" onclick=" comm100_Chat();
-                                            return false;
+                                        return false;
                                    " id="blink" class="chat"><i class="fa fa-wechat"></i> Chat Online! </a>
                                 <script src="http://chatserver.comm100.com/js/LiveChat.js?siteId=29538&planId=622"type="text/javascript"></script>
                             </div>
@@ -327,20 +329,21 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-                                    (function(b, o, i, l, e, r) {
-                                        b.GoogleAnalyticsObject = l;
-                                        b[l] || (b[l] =
-                                                function() {
-                                                    (b[l].q = b[l].q || []).push(arguments)
-                                                });
-                                        b[l].l = +new Date;
-                                        e = o.createElement(i);
-                                        r = o.getElementsByTagName(i)[0];
-                                        e.src = '//www.google-analytics.com/analytics.js';
-                                        r.parentNode.insertBefore(e, r)
-                                    }(window, document, 'script', 'ga'));
-                                    ga('create', 'UA-3987227-9');
-                                    ga('send', '_trackPageview');
+                                (function(b, o, i, l, e, r) {
+                                    b.GoogleAnalyticsObject = l;
+                                    b[l] || (b[l] =
+                                            function() {
+                                                (b[l].q = b[l].q || []).push(arguments)
+                                            });
+                                    b[l].l = +new Date;
+                                    e = o.createElement(i);
+                                    r = o.getElementsByTagName(i)[0];
+                                    e.src = '//www.google-analytics.com/analytics.js';
+                                    r.parentNode.insertBefore(e, r)
+                                }(window, document, 'script', 'ga'));
+                                ga('create', 'UA-3987227-9');
+                                ga('send', '_trackPageview');
         </script>
+        
     </body>
 </html>

@@ -65,11 +65,18 @@ switch ($_POST['form']) {
         $user = new user();
         if ($form == 'agregar-usuario') {
             $leccion_aprobada = 0;
-            if($user->agregar($cedula, $nombre, $apellido, $sexo, $nivel, $clave, $vencimiento, $email, $activo, $contrato, $estado, $ciudad, $leccion_aprobada, $pais)){
-                $lang_dir =  'inicio.php?lugar=agregar_usuario&estatus=registrado&contrato='.$user->usuario;
+            if ($user->agregar($cedula, $nombre, $apellido, $sexo, $nivel, $clave, $vencimiento, $email, $activo, $contrato, $estado, $ciudad, $leccion_aprobada, $pais)) {
+                $lang_dir = 'inicio.php?lugar=agregar_usuario&estatus=registrado&contrato=' . $user->usuario;
             }
         }
 
+        break;
+    case 'primera-vez':
+        $user = new user();
+        if ($user->primeraVez($txt_email,$usuario))
+        {
+            $lang_dir = "inicio.php";
+        }
         break;
 }
 
