@@ -1,18 +1,16 @@
 <?php
 //print_r($_SESSION);
+require_once('clases/db.class.php');
+$bd = new db();
 if (isset($_SESSION['wc']['session'])) {
-    $bd = new db();
     $usr = $_SESSION['wc']['usuario'];
     $sql = $bd->consulta("select * from usuarios where contrato = '$usr'");
     $valor = $bd->sig_reg($sql);
-
-
-    if ($valor['email']==null ||$valor['email'] == '' ) {
+    if ($valor['email'] == null || $valor['email'] == '') {
         $nombre = $valor['nombre'];
         $apellido = $valor['apellido'];
         $usr = $valor['contrato'];
-        ?>
-        <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        echo '<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -21,9 +19,8 @@ if (isset($_SESSION['wc']['session'])) {
                             <img src="images/logoWEC.png">
                         </a>
                     </div>    
-
                     <div class="modal-body">
-                        <h4 class="">BIENVENIDO <?php echo $nombre . ' ' . $apellido ?></h4>
+                        <h4 class="">BIENVENIDO ' . $nombre . ' ' . $apellido . '</h4>
                         <form action="form_process.php" method="POST">
                             <fieldset>
                                 <legend>
@@ -48,12 +45,10 @@ if (isset($_SESSION['wc']['session'])) {
 
                 </div><!-- /.modal-content -->
             </div>
-        </div>
-        <?php
+        </div>';
     }
 } else {
-    ?>
-    <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    echo '<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -75,16 +70,7 @@ if (isset($_SESSION['wc']['session'])) {
 
             </div><!-- /.modal-content -->
         </div>
-    </div>
-<?php } ?>
-<?php
-if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') {
-    require_once('clases/db.class.php');
-    $bd = new db;
-
-    $sql = $bd->consulta("select c.id from v_user_aula u, vcursos c where contrato = " . $_SESSION['wc']['usuario'] . " and u.aula = c.Libro");
-    $usr = $bd->sig_reg($sql);
-    $curso = $usr['id'];
+    </div>';
 }
 ?>
 
@@ -121,10 +107,14 @@ if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') 
         <div class="col-md-3">
             <?php
             if (isset($_SESSION['wc']['usuario']) && $_SESSION['wc']['usuario'] != 'admin') {
+
                 $persona = $_SESSION['wc']['usuario'];
-                //$curso = $usr['id'];
+                $buscar = $bd->consulta("select id from v_user_aula u, vcursos c where contrato = '$persona' and u.aula = c.Libro")or die("Asd");
+                $consultar = $bd->sig_reg($buscar);
+                //print_r($consulta);
+                $curso = $consultar[id];
+
                 $verficar = $bd->consulta("select * from inscripcion_curso i, vcurso_activo c where i.id_persona = '$persona' and i.id_curso = '$curso' and i.id_curso = c.id_curso");
-                //$usr = $bd->sig_reg($sql);
                 if ($bd->num_filas($verficar)) {
                     //$usr = $bd->sig_reg($sql);
                     if ($usr) {
