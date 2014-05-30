@@ -46,6 +46,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
         <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/start/jquery-ui.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="plugins/flexslider/flexslider.css">
+        <link rel="stylesheet" href="plugins/prettyPhoto/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
         <style>
             body {
                 padding-top: 50px;
@@ -66,7 +67,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
             <header class="header">
                 <div class="header-main container">
                     <h1 class="logo col-md-4 col-sm-4">
-                        <img src="images/logoWEC.png">
+                        <img src="images/logos/wcollege_new.jpg">
                     </h1>
                     <div class="info col-md-4 col-sm-4">
                         <img src="images/topPeople_new.png" class="people">
@@ -89,12 +90,14 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                         </ul>
                         <?php if (isset($_SESSION['wc']['session'])) { ?>
                             <div class="contact pull-right">
-                                <a href="http://chatserver.comm100.com/BBS.aspx?siteId=29538&planId=622" onclick=" comm100_Chat();
+                                <a href="http://www.comm100.com/livechat/" onclick=" comm100_Chat();
                                         return false;
-                                   " id="blink" class="chat"><i class="fa fa-wechat"></i> Chat Online! </a>
+                                        " target="_blank" title = "Live Chat Live Help Software for Website">
+                                    <img id="comm100_ButtonImage" src="http://chatserver.comm100.com/BBS.aspx?siteId=29538&planId=622" border="0px" alt="Live Chat Live Help Software for Website" />
+                                </a>
                                 <script src="http://chatserver.comm100.com/js/LiveChat.js?siteId=29538&planId=622"type="text/javascript"></script>
                             </div>
-                        <?php } ?>
+<?php } ?>
                     </div>
                 </div>
             </header>
@@ -107,7 +110,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                         <li class="nav-item">
                             <a href="inicio.php?lugar=lecciones&lecc=#">Temario</a>
                         </li>
-                        <?php if (isset($_SESSION['wc']['session']) && $_SESSION['wc']['session']) { ?>
+<?php if (isset($_SESSION['wc']['session']) && $_SESSION['wc']['session']) { ?>
                             <li class="nav-item">
                                 <a href="inicio.php?lugar=descargas">Descargas</a>
                             </li>
@@ -117,7 +120,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                             <li class="nav-item">
                                 <a href="inicio.php?lugar=vocabulario">Vocabulario</a>
                             </li>
-                        <?php } ?>
+<?php } ?>
                         <li class="nav-item">
                             <a href="inicio.php?lugar=videos">Videos</a>
                         </li>
@@ -156,7 +159,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                     </li-->
                                 </ul>
                             </li>
-                        <?php } else { ?>
+<?php } else { ?>
 
                             <li class="dropdown nav-item light-blue">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -167,7 +170,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                 <ul class="dropdown-menu" style="padding: 15px;min-width: 248px;">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <?php if ($_SESSION['wc']['nivel'] == 'E') { ?>
+    <?php if ($_SESSION['wc']['nivel'] == 'E') { ?>
                                                 <li class="light-black">
                                                     <a href="inicio.php?lugar=perfil"> 
                                                         <i class="ace-icon fa fa-cog"></i>
@@ -175,15 +178,15 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                                     </a>
                                                 </li>
 
-                                            <?php } ?>
-                                            <?php if ($_SESSION['wc']['nivel'] == 's' || $_SESSION['wc']['nivel'] == 'p') { ?>
+    <?php } ?>
+    <?php if ($_SESSION['wc']['nivel'] == 's' || $_SESSION['wc']['nivel'] == 'p') { ?>
                                                 <li class="light-black">
                                                     <a href="inicio.php?lugar=administrador"> 
                                                         <i class="ace-icon fa fa-cog"></i>
                                                         Administrador
                                                     </a>
                                                 </li>    
-                                            <?php } ?>
+    <?php } ?>
                                             <!--li class="light-black">
                                                 <a href="#"> 
                                                     <i class="ace-icon fa fa-user"></i>
@@ -199,7 +202,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                             </li>
                                         </div>
                                 </ul>
-                            <?php } ?>    
+<?php } ?>    
                     </ul>
                 </div>
             </nav>
@@ -222,14 +225,14 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                             <?php } ?>
                             <?php if ($_SESSION['wc']['nivel'] == 's' || $_SESSION['wc']['nivel'] == 'p') { ?>
                                 <a href="inicio.php?lugar=administrador">Administrador</a>
-                            <?php } ?>
+                        <?php } ?>
                         </li>
-                        <?php if ($_SESSION['wc']['nivel'] == 'E') { ?>
+    <?php if ($_SESSION['wc']['nivel'] == 'E') { ?>
                             <li class="time button-wrap">
                                 <a href="inicio.php?lugar=servicios">Horario</a>
                             </li>
-                        <?php } ?>
-                    <?php } ?>
+    <?php } ?>
+<?php } ?>
                 </ul>
             </div>
             <!--aside></aside-->
@@ -262,7 +265,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                             <!--/div-->
                             <div class="col-md-8 col-sm-8">
                                 <img src="images/Title_traductor.jpg" style="padding:0px;"/>
-                                <?php include('traductor.html'); ?>
+<?php include('traductor.html'); ?>
                                 <!--div class="footer-col-inner">
                                     <h3>Unete a nuestro Boletin Informativo</h3>
                                     <p>Suscríbete para recibir nuestro boletín semanal directamente en tu bandeja correo</p>
@@ -325,6 +328,9 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
 
         if ($_GET['lugar'] == "agregar_usuario")
             echo '<script src="lib/new_user.js"></script>';
+
+        if ($_GET['lugar'] == "galeria")
+            echo '<script src="plugins/prettyPhoto/jquery.prettyPhoto.js"></script>';
         ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -344,6 +350,6 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                 ga('create', 'UA-3987227-9');
                                 ga('send', '_trackPageview');
         </script>
-        
+
     </body>
 </html>

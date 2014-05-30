@@ -37,8 +37,9 @@ class user {
         return true;
     }
     
-    public function primeraVez($email,$usuario){
-        $sql = $this->con->consulta("UPDATE usuarios set email = '$email' where contrato = '$usuario'");
+    public function primeraVez($email,$usuario,$txt_telefono){
+       
+        $sql = $this->con->consulta("UPDATE usuarios set email = '$email', telefono = '$txt_telefono'  where contrato = '$usuario'");
         return true;
     }
 

@@ -72,8 +72,9 @@ switch ($_POST['form']) {
 
         break;
     case 'primera-vez':
+       
         $user = new user();
-        if ($user->primeraVez($txt_email,$usuario))
+        if ($user->primeraVez($txt_correo,$usuario,$txt_telefono))
         {
             $lang_dir = "inicio.php";
         }

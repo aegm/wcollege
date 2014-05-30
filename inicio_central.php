@@ -30,8 +30,12 @@ if (isset($_SESSION['wc']['session'])) {
                                     <label>Email</label>
                                     <input name ="txt_correo" class="form-control">
                                 </div>
+                                <div class="form-group">
+                                    <label>Telefono</label>
+                                    <input name ="txt_telefono" class="form-control">
+                                </div>
                                 <input type="hidden" name="form" value="primera-vez" />
-                                <input type="hidden" name="usuario" value="<?php echo $usr; ?>" />
+                                <input type="hidden" name="usuario" value="'.$usr.'" />
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-primary" />
                                 </div>
