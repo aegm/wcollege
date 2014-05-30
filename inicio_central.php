@@ -160,8 +160,8 @@ if (isset($_SESSION['wc']['session'])) {
                         <div class="col-md-6 news-item">
                             <h2 class="title"><a href="news-single.html">Clases Online!</a></h2>
                             <p>Bienvenidos a Washington English College esta nueva interfaz te brindara una mejor experiencia y asi puedas alcanzar tus objetivos como profesional Bilingue .</p>
-                            <!--a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a-->
-                            <img class="thumb" src="images/principal.png" alt="" style="width: 160px; height: 125px;">
+                            <a class="read-more" href="inicio.php?lugar=noticiasuni">Leer Mas <i class="fa fa-chevron-right"></i></a>
+                            <img class="thumb" src="images/noticias/notiuni.jpg" alt="" style="width: 160px; height: 125px;">
                         </div><!--//news-item-->
                         <div class="col-md-6 news-item">
                             <h2 class="title"><a href="news-single.html">Videos Online</a></h2>
@@ -173,7 +173,7 @@ if (isset($_SESSION['wc']['session'])) {
                                 <embed type="application/x-shockwave-flash" id="player2" name="player2" src="player.swf" width="160" height="134" allowscriptaccess="always" allowfullscreen="true" flashvars="file=bienvenida.flv&amp;image=preview.jpg&amp;controlbar=none">
                             </object>
                             <p>Para facilitarte el acceso a nuestras clases en el lugar y el momento que quieras desde la comodidad de tu computadora.</p>
-                            <!--a class="read-more" href="#">Leer Mas <i class="fa fa-chevron-right"></i></a-->                
+                            <a class="read-more" href="inicio.php?lugar=como">Leer Mas <i class="fa fa-chevron-right"></i></a>                
                         </div><!--//news-item-->
 
                         <!--//news-item-->
@@ -188,9 +188,9 @@ if (isset($_SESSION['wc']['session'])) {
         <section class="awards">
             <div class="items">
                 <ul class="logos">
-                    <li class="col-md-4 col-sm-2 col-xs-4"><img src="images/logos/Logo-01g.jpg" ></li>
-                    <li class="col-md-4 col-sm-2 col-xs-4"><img src="images/logos/Logo-solog.jpg"></li>
-                    <li class="col-md-4 col-sm-2 col-xs-4"><img src="images/logos/LogowSchoolg.jpg"></li>
+                    <li class="col-md-4 col-sm-2 col-xs-4"><img src="images/logos/wcollege_new.jpg" ></li>
+                    <li class="col-md-4 col-sm-2 col-xs-4"><img src="images/logos/school_new.jpg"></li>
+                    <li class="col-md-4 col-sm-2 col-xs-4"><img src="images/logos/kids_new.jpg"></li>
                 </ul>
             </div>
         </section>
