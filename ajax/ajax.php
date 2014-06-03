@@ -13,6 +13,9 @@ include_once '../clases/Gallery.php';
 $bd=new db;
 switch ($_REQUEST['a'])
 {
+    case 'grafico':
+        return true;
+        break;
     case 'inscribir-curso':
         $curso = new curso;
         $curso->inscribirCurso($_GET['contrato'], $_GET['nivel'],$_GET['pais']);

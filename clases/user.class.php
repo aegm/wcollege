@@ -56,7 +56,7 @@ class user {
 
     public function login($usuario, $clave) {
 
-        $sql = $this->con->consulta("select * from usuarios where contrato = '$usuario' AND clave = $clave")or die("error");
+        $sql = $this->con->consulta("select * from usuarios where contrato = '$usuario' AND clave = $clave and activo = 'S'")or die("error");
         if ($consulta = $this->con->sig_reg($sql)) {
 
             $this->session = $_SESSION[SISTEMA]['session'] = true;
