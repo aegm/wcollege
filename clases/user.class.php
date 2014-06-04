@@ -12,6 +12,8 @@ class user {
     private $session = FALSE;
     public $mensaje;
     public $error;
+    public $progreso;
+    public $resto;
 
     public function __construct() {
         $this->con = new db;
@@ -36,9 +38,9 @@ class user {
         $sql = $this->con->consulta("INSERT INTO usuarios (contrato,cedula,nombre,apellido,sexo,nivel,vencimiento,clave,activo,estado,ciudad,leccion_aprobada,pais) VALUES ('$contrato','$cedula','$nombre','$apellido','$sexo','$nivel','$vencimiento','$keygen','$activo','$estado','$ciudad','$leccion_aprobada','$pais')")or die("error");
         return true;
     }
-    
-    public function primeraVez($email,$usuario,$txt_telefono){
-       
+
+    public function primeraVez($email, $usuario, $txt_telefono) {
+
         $sql = $this->con->consulta("UPDATE usuarios set email = '$email', telefono = '$txt_telefono'  where contrato = '$usuario'");
         return true;
     }
@@ -56,7 +58,7 @@ class user {
 
     public function login($usuario, $clave) {
 
-        $sql = $this->con->consulta("select * from usuarios where contrato = '$usuario' AND clave = $clave and activo = 'S'")or die("error");
+        $sql = $this->con->consulta("select * from usuarios where contrato = '$usuario' AND clave = '$clave' and activo = 'S'")or die("error");
         if ($consulta = $this->con->sig_reg($sql)) {
 
             $this->session = $_SESSION[SISTEMA]['session'] = true;
@@ -76,6 +78,29 @@ class user {
 a son incorrectos...";
             return false;
         }
+    }
+
+    public function verificaProgreso() {
+        $user = $_SESSION[SISTEMA]['usuario'];
+        $sql = $this->con->consulta("select * from usuarios where contrato = '$user'");
+        if ($consulta = $this->con->sig_reg($sql)) {
+            $nivel = $consulta['leccion_aprobada'];
+            if ($nivel >= 16) {
+                $intPct = "100";
+                $cantidad = $intPct;
+            } else {
+                if (($nivel >= 1) or ( $nivel <= 15 )) {
+                    $intPct = round(( ($nivel * 100) / 15));
+                    $cantidad = $intPct;
+                }
+            }
+        }
+        if($cantidad > 0){
+            $this->resto = 100 - $cantidad;
+        }
+        $this->progreso = $cantidad;
+        $this->nivel = $nivel;
+        return true;
     }
 
     public function cargar() {

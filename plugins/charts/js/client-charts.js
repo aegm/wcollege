@@ -11,32 +11,42 @@ $(document).ready(function() {
 
 function GetCountryList() {
     var data2 = "";
+    var progreso, resto;
     $.ajax({
         type: "POST",
         url: "ajax/ajax.php",
-        data: "{\"type\":" + "\"country\"" +
-                "}",
+        data: {a: 'grafico'},
         contentType: "application/x-www-form-urlencoded",
         dataType: "json",
         success: function(response) {
+            if (response.estatus)
+                var resultsArray = (typeof response.datos) == 'int' ? eval('(' + response.datos + ')') : response.datos;
 
-            var resultsArray = (typeof response) == 'string' ? eval('(' + response + ')') : response;
+            //alert(resultsArray.length);
             var data2 = new Array();
-            for (var i = 0; i < resultsArray.length; i++) {
-                data2[i] = resultsArray[i].workgroup;
-                var barChartData = {
-                    labels: ["January", "February", "March", "April", "May", "June", "July"],
-                    datasets: [
-                        {
-                            fillColor: "rgba(220,220,220,0.5)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            data: [65, 59, 90, 81, 56, 55, 40, 80]
-                        }
-                    ]
+            // alert(data2);
 
-                };
-            }
-            var myLine = new Chart(document.getElementById("doughnut").getContext("2d")).Line(barChartData);
+            $.each(response.datos, function(index, value) {
+                if (index == 'progreso')
+                    progreso = value;
+                else
+                    resto = value;
+            });
+
+
+            var doughnutData = [
+                {
+                    value: progreso,
+                    color: "#F7464A"
+                },
+                {
+                    value: resto,
+                    color: "#46BFBD"
+                }
+
+            ];
+
+            var myLine = new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
         }
     });
 }

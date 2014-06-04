@@ -7,6 +7,7 @@
 session_start();
 include_once '../clases/db.class.php';
 include_once '../clases/curso.class.php';
+include_once '../clases/user.class.php';
 include_once '../clases/comprobante.class.php';
 include_once '../clases/Gallery.php';
 
@@ -14,6 +15,11 @@ $bd=new db;
 switch ($_REQUEST['a'])
 {
     case 'grafico':
+        $user = new user();
+        $user->verificaProgreso();
+        $datos['datos'] = array("progreso" => $user->progreso,"resto" => $user->resto);
+        $datos['estatus'] = true;
+        echo json_encode($datos);
         return true;
         break;
     case 'inscribir-curso':

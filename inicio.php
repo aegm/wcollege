@@ -337,6 +337,10 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
             echo '<script src="plugins/prettyPhoto/jquery.prettyPhoto.js"></script>';
             echo '<script src="lib/galeria.js"></script>';
         }
+        if ($_GET['lugar'] == "progreso"){
+            echo '<script src="plugins/charts/js/chart.js"></script>';
+            echo '<script src="plugins/charts/js/client-charts.js"></script>';
+        }
         ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
