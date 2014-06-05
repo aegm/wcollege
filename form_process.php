@@ -62,11 +62,14 @@ switch ($_POST['form']) {
         }
         break;
     case 'agregar-usuario':
+      
         $user = new user();
         if ($form == 'agregar-usuario') {
             $leccion_aprobada = 0;
             if ($user->agregar($cedula, $nombre, $apellido, $sexo, $nivel, $clave, $vencimiento, $email, $activo, $contrato, $estado, $ciudad, $leccion_aprobada, $pais)) {
                 $lang_dir = 'inicio.php?lugar=agregar_usuario&estatus=registrado&contrato=' . $user->usuario;
+            }else{
+                $lang_dir = 'inicio.php?lugar=agregar_usuario&estatus=error&contrato=' . $user->usuario;
             }
         }
 

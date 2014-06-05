@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 function GetCountryList() {
     var data2 = "";
-    var progreso, resto;
+    var progreso_one, progreso_two, progreso_tree;
     $.ajax({
         type: "POST",
         url: "ajax/ajax.php",
@@ -27,26 +27,84 @@ function GetCountryList() {
             // alert(data2);
 
             $.each(response.datos, function(index, value) {
-                if (index == 'progreso')
-                    progreso = value;
-                else
-                    resto = value;
+                if (index == 'progreso_one')
+                    progreso_one = value;
+                if (index == 'progreso_two')
+                    progreso_two = value;
+                if (index == 'progreso_tree')
+                    progreso_tree = value;
+
             });
 
 
             var doughnutData = [
                 {
-                    value: progreso,
-                    color: "#F7464A"
+                    value: progreso_one,
+                    color: "#46BFBD",
+                    label: 'Sleep',
+                    labelColor: 'blue',
+                    labelFontSize: '10',
+                    labelAlign: 'left'
                 },
                 {
-                    value: resto,
-                    color: "#46BFBD"
+                    value: eval(100 - progreso_one),
+                    color: "#F7464A",
+                    label: 'Sleep',
+                    labelColor: 'blue',
+                    labelFontSize: '10',
+                    labelAlign: 'left',
+
                 }
 
             ];
+            var doughnutTwo = [
+                {
+                    value: progreso_two,
+                    color: "#46BFBD",
+                    label: 'Sleep',
+                    labelColor: 'black',
+                    labelFontSize: '16'
+                },
+                {
+                    value: eval(100 - progreso_two),
+                    color: "#F7464A",
+                    label: 'Sleep'
+                }
 
-            var myLine = new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
+            ];
+            var doughnutTree = [
+                {
+                    value: progreso_tree,
+                    color: "#46BFBD",
+                    label: 'Sleep',
+                },
+                {
+                    value: eval(100 - progreso_tree),
+                    color: "#F7464A",
+                    label: 'Sleep'
+                }
+
+            ];
+            var DoughnutOptions = {
+                segmentShowStroke: true,
+                segmentStrokeColor: "#fff",
+                segmentStrokeWidth: 2,
+                percentageInnerCutout: 50,
+                animation: true,
+                animationSteps: 100,
+                animationEasing: "easeOutBounce",
+                animateRotate: true,
+                animateScale: false,
+                onAnimationComplete: null,
+                labelFontFamily: "Arial",
+                labelFontStyle: "normal",
+                labelFontSize: 24,
+                labelFontColor: "#666"
+            }
+
+            var myLine = new Chart(document.getElementById("doughnut").getContext("2d")).Pie(doughnutData, {labelAlign: 'right'});
+            var myLine = new Chart(document.getElementById("doughnut_two").getContext("2d")).Pie(doughnutTwo, DoughnutOptions);
+            var myLine = new Chart(document.getElementById("doughnut_tree").getContext("2d")).Pie(doughnutTree, DoughnutOptions);
         }
     });
 }

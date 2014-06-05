@@ -35,8 +35,12 @@ class user {
         $keygen = ($contrato / 2 + intval($contrato / 3.3)) / 2;
         $this->clave = $keygen = intval($keygen);
         $this->usuario = $contrato;
-        $sql = $this->con->consulta("INSERT INTO usuarios (contrato,cedula,nombre,apellido,sexo,nivel,vencimiento,clave,activo,estado,ciudad,leccion_aprobada,pais) VALUES ('$contrato','$cedula','$nombre','$apellido','$sexo','$nivel','$vencimiento','$keygen','$activo','$estado','$ciudad','$leccion_aprobada','$pais')")or die("error");
-        return true;
+        $sql = $this->con->consulta("INSERT INTO usuarios (contrato,cedula,nombre,apellido,sexo,nivel,vencimiento,clave,activo,estado,ciudad,leccion_aprobada,pais) VALUES ('$contrato','$cedula','$nombre','$apellido','$sexo','$nivel','$vencimiento','$keygen','$activo','$estado','$ciudad','$leccion_aprobada','$pais')");
+        if (!$this->con->my_error) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function primeraVez($email, $usuario, $txt_telefono) {
@@ -95,7 +99,7 @@ a son incorrectos...";
                 }
             }
         }
-        if($cantidad > 0){
+        if ($cantidad > 0) {
             $this->resto = 100 - $cantidad;
         }
         $this->progreso = $cantidad;

@@ -17,7 +17,7 @@ switch ($_REQUEST['a'])
     case 'grafico':
         $user = new user();
         $user->verificaProgreso();
-        $datos['datos'] = array("progreso" => $user->progreso,"resto" => $user->resto);
+        $datos['datos'] = array("progreso_one" => $user->progreso_one,"progreso_two" => $user->progreso_two,"progreso_tree" => $user->progreso_tree);
         $datos['estatus'] = true;
         echo json_encode($datos);
         return true;

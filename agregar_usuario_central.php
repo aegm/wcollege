@@ -48,6 +48,13 @@ if (isset($_SESSION['wc']['nombre']) && ($_SESSION['wc']['nivel'] == 'a' || $_SE
             require_once('clases/db.class.php');
             $bd = new db;
         }
+        if($_GET['estatus'] == 'error'){
+            ?>
+            <script type="text/javascript">
+                alert("El Usuario del Contrato: <?php echo $_GET[contrato]; ?> ya se encuentra registrado ");
+            </script>        
+            <?php
+        }
 
         if ($_GET['estatus'] == "registrado") {
             $sql = $bd->consulta("SELECT * FROM usuarios WHERE contrato = '$_GET[contrato]'");
