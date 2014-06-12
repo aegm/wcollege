@@ -26,7 +26,7 @@ $leccion = $bd->sig_reg($sql);
         <div id="imagen_izq" class="col-md-2">
             <img src="images/imgLecciones.jpg" width="152" height="260" />
         </div>
-        <div style="float:left" class="col-md-6">
+        <div style="float:left" class="col-md-7">
             <p>&nbsp;</p>
             <?php
             while ($leccion) {
@@ -40,11 +40,11 @@ $leccion = $bd->sig_reg($sql);
                         while ($leccion && $nivel == $leccion['NIVEL']) {
                             ?>
                             <a class="txt_central" href="inicio.php<?php echo "?lugar=leccion&lecc=$leccion[LECCION]&valor=1"; ?>">LECCIÓN <?php
-                    if ($leccion['LECCION'] <= 25)
-                        echo $leccion['LECCION'] . " - " . $leccion['TITULO'];
-                    else
-                        echo $leccion['leccion2'] . " - " . $leccion['TITULO'];
-                            ?></a>
+                                if ($leccion['LECCION'] <= 25)
+                                    echo $leccion['LECCION'] . " - " . $leccion['TITULO'];
+                                else
+                                    echo $leccion['leccion2'] . " - " . $leccion['TITULO'];
+                                ?></a>
                             <img id="<?php echo $leccion['audio_leccion'] ?>" class="audio_lesson" src="images/audio.png" width="20px" height="20px"/>
                             <br />
 
@@ -59,6 +59,10 @@ $leccion = $bd->sig_reg($sql);
             }//fin while
             ?>
         </div>
+        <div class="col-md-3">
+            <img src="images/Title_traductor.jpg" style="padding:0px;"/-->
+            <?php include('traductor.html'); ?>
+        </div>
     </div>
 </div>
 <div id="audio">
@@ -66,34 +70,34 @@ $leccion = $bd->sig_reg($sql);
 </div>
 <script>
     /*$('.audio_lesson').click(function() {
-        var id = this.id.split('/');
-        var carpeta = id[0];
-        var cd = id[1];
-        var pista = id[2];
-        var file = carpeta + '/' + cd + '/' + pista;
-
-
-        jwplayer("player_audio").setup({
-            flashplayer: "lib/jwplayer/player.swf",
-            file: file,
-            controlbar: 'bottom',
-            autostart: true,
-            height: 24,
-            width: 250
-        });
-
-        $('#audio').dialog({
-            title: 'Reproductor',
-            autoOpen: true,
-            resizable: true,
-            modal: false,
-            width: 'auto',
-            buttons: {
-                Cerrar: function() {
-                    $(this).html('<div id="player_audio"></div>');
-                    $(this).dialog('close');
-                }
-            }
-        });
-    });*/
+     var id = this.id.split('/');
+     var carpeta = id[0];
+     var cd = id[1];
+     var pista = id[2];
+     var file = carpeta + '/' + cd + '/' + pista;
+     
+     
+     jwplayer("player_audio").setup({
+     flashplayer: "lib/jwplayer/player.swf",
+     file: file,
+     controlbar: 'bottom',
+     autostart: true,
+     height: 24,
+     width: 250
+     });
+     
+     $('#audio').dialog({
+     title: 'Reproductor',
+     autoOpen: true,
+     resizable: true,
+     modal: false,
+     width: 'auto',
+     buttons: {
+     Cerrar: function() {
+     $(this).html('<div id="player_audio"></div>');
+     $(this).dialog('close');
+     }
+     }
+     });
+     });*/
 </script>

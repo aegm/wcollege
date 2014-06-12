@@ -108,24 +108,30 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
             <nav class="main-nav collapse navbar-collapse" role="navigation">
                 <div class="container">
                     <ul class="nav navbar-nav">
-                        <li class="active nav-item">
+                        <?php if ($_GET['lugar'] == 'inicio' ? $active = 'active' : $active = '')  ?>
+                        <li class="<?php echo $active ?> nav-item">
                             <a href="inicio.php?lugar=inicio">Inicio</a>
                         </li>
-                        <li class="nav-item">
+                        <?php if ($_GET['lugar'] == 'lecciones' ? $active = 'active' : $active = '')  ?>
+                        <li class="<?php echo $active ?> nav-item">
                             <a href="inicio.php?lugar=lecciones&lecc=#">Temario</a>
                         </li>
                         <?php if (isset($_SESSION['wc']['session']) && $_SESSION['wc']['session']) { ?>
-                            <li class="nav-item">
+                            <?php if ($_GET['lugar'] == 'descargas' ? $active = 'active' : $active = '')  ?>
+                            <li class="<?php echo $active ?> nav-item">
                                 <a href="inicio.php?lugar=descargas">Descargas</a>
                             </li>
-                            <li class="nav-item">
+                            <?php if ($_GET['lugar'] == 'evaluaciones' ? $active = 'active' : $active = '')  ?>
+                            <li class="<?php echo $active ?> nav-item">
                                 <a href="inicio.php?lugar=evaluaciones">Evaluar</a>
                             </li>
-                            <li class="nav-item">
+                            <?php if ($_GET['lugar'] == 'vocabulario' ? $active = 'active' : $active = '')  ?>
+                            <li class="<?php echo $active ?> nav-item">
                                 <a href="inicio.php?lugar=vocabulario">Vocabulario</a>
                             </li>
                         <?php } ?>
-                        <li class="nav-item">
+                        <?php if ($_GET['lugar'] == 'videos' ? $active = 'active' : $active = '')  ?>    
+                        <li class="<?php echo $active ?> nav-item">
                             <a href="inicio.php?lugar=videos">Videos</a>
                         </li>
                     </ul>
@@ -248,29 +254,29 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                 <div class="footer-content">
                     <div class="container">
                         <div class="row">
-                            <!--div class="footer-col col-md-3 col-sm-4">
-                            <!--div class="footer-col-inner">
-                                <h3>Acerca De</h3>
-                                <ul>
-                                    <li>
-                                        <a>
-                                            <i class="fa fa-caret-right"></i>
-                                            Politica de Privacidad
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <i class="fa fa-caret-right"></i>
-                                            Terminos y condiciones
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div-->
-                            <!--/div-->
-                            <div class="col-md-8 col-sm-8">
-                                <img src="images/Title_traductor.jpg" style="padding:0px;"/>
-                                <?php include('traductor.html'); ?>
-                                <!--div class="footer-col-inner">
+                            <div class="footer-col col-md-3 col-sm-4">
+                                <div class="footer-col-inner">
+                                    <h3>Coorporativo</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="inicio.php?lugar=mision">
+                                                <i class="fa fa-caret-right"></i>
+                                                Misión
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="inicio.php?lugar=vision">
+                                                <i class="fa fa-caret-right"></i>
+                                                Visión
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <!--img src="images/Title_traductor.jpg" style="padding:0px;"/-->
+                                <?php //include('traductor.html'); ?>
+                                <div class="footer-col-inner">
                                     <h3>Unete a nuestro Boletin Informativo</h3>
                                     <p>Suscríbete para recibir nuestro boletín semanal directamente en tu bandeja correo</p>
                                     <form class="subscribe-form">
@@ -280,7 +286,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                         <input class="btn btn-theme btn-subscribe" type="submit" value="Subscribe">
                                     </form>
 
-                                </div-->        
+                                </div>        
                             </div>
                             <div class="col-md-3 col-sm-4">
                                 <div class="footer-col-inner">
@@ -291,7 +297,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                             <span class="adr-group pull-left">       
                                                 <span class="street-address">Washignton College</span><br>
                                                 <span class="region">Av. Bolivar Norte Torre Banaven</span><br>
-                                                <span class="postal-code">Oficina 222</span><br>
+                                                <span class="postal-code">Oficina 202</span><br>
                                                 <span class="country-name">Valencia - Venezuela</span>
                                             </span>
                                         </p>
@@ -306,7 +312,17 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                 <div class="bottom-bar">
                     <div class="container">
                         <div class="row">
-                            <small class="copyright col-md-12 col-sm-12 col-xs-12">Copyright 2010 Washington English Institute RIF: J-31541069-9 | Todos los derechos Reservados <!--a href="#">Donec sed odio</a--></small>
+                            <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright 2010 Washington English Institute RIF: J-31541069-9 | Todos los derechos Reservados <!--a href="#">Donec sed odio</a--></small>
+                            <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                <!--li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li-->
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li> 
+                                <!--li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li-->
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -333,13 +349,16 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
         if ($_GET['lugar'] == "agregar_usuario")
             echo '<script src="lib/new_user.js"></script>';
 
-        if ($_GET['lugar'] == "galeria"){
+        if ($_GET['lugar'] == "galeria") {
             echo '<script src="plugins/prettyPhoto/jquery.prettyPhoto.js"></script>';
             echo '<script src="lib/galeria.js"></script>';
         }
-        if ($_GET['lugar'] == "progreso"){
-            echo '<script src="plugins/charts/js/chart.js"></script>';
-            echo '<script src="plugins/charts/js/client-charts.js"></script>';
+        if ($_GET['lugar'] == "progreso") {
+            echo '<script src="plugins/easyPieChart/jquery.easypiechart.js"></script>';
+        }
+        if ($_GET['lugar'] == "venta") {
+            echo '<script src="plugins/charts/js/Chart.js"></script>';
+            echo '<script src="lib/ventas.js"></script>';
         }
         ?>
 

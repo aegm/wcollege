@@ -2,7 +2,7 @@
 include('administrador_central.php');
 if (!(isset($bd))) {
     require_once('clases/db.class.php');
-    $bd = new db;
+    $bd = new db();
 }
 ?>
 <div class="cont_derecho_adm col-md-8">

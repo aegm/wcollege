@@ -11,27 +11,27 @@
                     <form action="form_process.php" method="POST">
                         <div class="form-group name">
                             <label for="name">Nombre y Apellido</label>
-                            <input name="txt_nombre" id="name" type="text" class="form-control" placeholder="Nombre y Aplleido">
+                            <input name="txt_nombre" id="txt_nombre" type="text" class="form-control" placeholder="Nombre y Apellido">
                         </div><!--//form-group-->
                         <div class="form-group name">
                             <label for="name">Empresa</label>
-                            <input name="txt_empresa" id="name" type="text" class="form-control" placeholder="Nombre de la Empresa">
+                            <input name="txt_empresa" id="txt_empresa" type="text" class="form-control" placeholder="Nombre de la Empresa">
                         </div><!--//form-group-->
                         <div class="form-group name">
                             <label for="name">Cargo</label>
-                            <input name="txt_cargo" id="name" type="text" class="form-control" placeholder="Cargo">
+                            <input name="txt_cargo" id="txt_cargo" type="text" class="form-control" placeholder="Cargo">
                         </div><!--//form-group-->
                         <div class="form-group email">
                             <label for="email">Email<span class="required">*</span></label>
-                            <input id="email" type="email" class="form-control" placeholder="Email de contacto">
+                            <input name="txt_email" id="txt_email" type="email" class="form-control" placeholder="Email de contacto">
                         </div><!--//form-group-->
                         <div class="form-group phone">
                             <label for="phone">Telefono</label>
-                            <input id="phone" type="tel" class="form-control" placeholder="Ingrese su numero telefonico">
+                            <input name="txt_telefono" id="txt_telefono" type="tel" class="form-control" placeholder="Ingrese su numero telefónico">
                         </div><!--//form-group-->
                         <div class="form-group message">
                             <label for="message">Mensaje<span class="required">*</span></label>
-                            <textarea id="message" class="form-control" rows="6" placeholder="Ingrese su mensaje aqui..."></textarea>
+                            <textarea name="txt_mensaje" id="txt_mensaje" class="form-control" rows="6" placeholder="Ingrese su mensaje aqui..."></textarea>
                         </div><!--//form-group-->
                         <div id="campos_ocultos">
                             <input type="hidden" name="form" value="mail" />

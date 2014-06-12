@@ -35,56 +35,23 @@ function GetCountryList() {
                     progreso_tree = value;
 
             });
+            var data = {
+                labels: ["Nivel 1", "Nivel 2", "Nivel 3"],
+                datasets: [
+                    {
+                        fillColor: "rgba(16,117,189,0.5)",
+                        strokeColor: "rgba(16,117,189,1)",
+                        data: [progreso_one, progreso_two, progreso_tree]
+                    },
+                    {
+                        fillColor: "rgba(224,24,34,0.5)",
+                        strokeColor: "rgba(224,24,34,1)",
+                        data: [eval(100 - progreso_one), eval(100 - progreso_two), eval(100 - progreso_tree)]
+                    }
+                ]
+            }
 
-
-            var doughnutData = [
-                {
-                    value: progreso_one,
-                    color: "#46BFBD",
-                    label: 'Sleep',
-                    labelColor: 'blue',
-                    labelFontSize: '10',
-                    labelAlign: 'left'
-                },
-                {
-                    value: eval(100 - progreso_one),
-                    color: "#F7464A",
-                    label: 'Sleep',
-                    labelColor: 'blue',
-                    labelFontSize: '10',
-                    labelAlign: 'left',
-
-                }
-
-            ];
-            var doughnutTwo = [
-                {
-                    value: progreso_two,
-                    color: "#46BFBD",
-                    label: 'Sleep',
-                    labelColor: 'black',
-                    labelFontSize: '16'
-                },
-                {
-                    value: eval(100 - progreso_two),
-                    color: "#F7464A",
-                    label: 'Sleep'
-                }
-
-            ];
-            var doughnutTree = [
-                {
-                    value: progreso_tree,
-                    color: "#46BFBD",
-                    label: 'Sleep',
-                },
-                {
-                    value: eval(100 - progreso_tree),
-                    color: "#F7464A",
-                    label: 'Sleep'
-                }
-
-            ];
+            
             var DoughnutOptions = {
                 segmentShowStroke: true,
                 segmentStrokeColor: "#fff",
@@ -102,9 +69,8 @@ function GetCountryList() {
                 labelFontColor: "#666"
             }
 
-            var myLine = new Chart(document.getElementById("doughnut").getContext("2d")).Pie(doughnutData, {labelAlign: 'right'});
-            var myLine = new Chart(document.getElementById("doughnut_two").getContext("2d")).Pie(doughnutTwo, DoughnutOptions);
-            var myLine = new Chart(document.getElementById("doughnut_tree").getContext("2d")).Pie(doughnutTree, DoughnutOptions);
+            var myLine = new Chart(document.getElementById("doughnut").getContext("2d")).Bar(data);
+          
         }
     });
 }

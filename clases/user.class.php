@@ -12,8 +12,9 @@ class user {
     private $session = FALSE;
     public $mensaje;
     public $error;
-    public $progreso;
-    public $resto;
+    public $progreso_one = 0;
+    public $progreso_two = 0;
+    public $progreso_tree = 0;
 
     public function __construct() {
         $this->con = new db;
@@ -89,20 +90,29 @@ a son incorrectos...";
         $sql = $this->con->consulta("select * from usuarios where contrato = '$user'");
         if ($consulta = $this->con->sig_reg($sql)) {
             $nivel = $consulta['leccion_aprobada'];
-            if ($nivel >= 16) {
-                $intPct = "100";
-                $cantidad = $intPct;
-            } else {
-                if (($nivel >= 1) or ( $nivel <= 15 )) {
-                    $intPct = round(( ($nivel * 100) / 15));
-                    $cantidad = $intPct;
-                }
+
+            if (($nivel >= 1) && ( $nivel <= 15 )) {
+                $intPct = round(( ($nivel * 100) / 15));
+                $this->progreso_one = $intPct;
+                $this->progreso_two = 0;
+                $this->progreso_tree = 0;
+            }
+
+            if (($nivel >= 16) && ( $nivel <= 25)) {
+                $resta = ($consulta['leccion_aprobada'] - 15);
+                $intPct = round(( ($resta * 100) / 10));
+                $this->progreso_one = 100;
+                $this->progreso_two = $intPct;
+                $this->progreso_tree = 0;
+            }
+            if (($nivel >= 26) && ( $nivel <= 56)) {
+                $resta = ($consulta['leccion_aprobada'] - 25);
+                $intPct = round(( ($resta * 100) / 31));
+                $this->progreso_one = 100;
+                $this->progreso_two = 100;
+                $this->progreso_tree = $intPct;
             }
         }
-        if ($cantidad > 0) {
-            $this->resto = 100 - $cantidad;
-        }
-        $this->progreso = $cantidad;
         $this->nivel = $nivel;
         return true;
     }
