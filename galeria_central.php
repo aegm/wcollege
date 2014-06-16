@@ -4,7 +4,7 @@
 </header>
 <div class="row page-row">
     <?php
-    $directory = 'images/Galeria2';
+    $directory = 'images/Galeria1';
     $dirint = dir($directory);
     while (($archivo = $dirint->read()) !== false) {
         if (eregi("gif", $archivo) || eregi("jpg", $archivo) || eregi("png", $archivo)) {

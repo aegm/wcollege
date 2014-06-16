@@ -251,7 +251,7 @@ if ((isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'] ) || (isset
                                 &nbsp;<a class="txt_num_pag" href='inicio.php<?php echo "?lugar=$_GET[lugar]&lecc=$_GET[lecc]&pag=$pagsiguiente"; ?>'> Siguiente > </a>
                              <!--   &nbsp;&nbsp;<a class="txt_num_pag" href='inicio.php<?php echo "?lugar=$_GET[lugar]&lecc=$_GET[lecc]&pag=$num_puntos"; ?>'> >> </a> 		-->									  				  <?php } else { ?>
 
-                                                                                                                                <!--  <a class="txt_num_pag" href='inicio.php<?php echo "?lugar=lecciones"; ?>'> Ir al Temario </a>--> 
+                                                                                                                                                <!--  <a class="txt_num_pag" href='inicio.php<?php echo "?lugar=lecciones"; ?>'> Ir al Temario </a>--> 
 
                                 <?php
                             }
@@ -312,17 +312,20 @@ if ((isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'] ) || (isset
             <div id="audio">
                 <div id="player_audio"></div>
             </div>
-            <div class="col-md-3">
-                <img src="images/Title_traductor.jpg" style="padding:0px;"/-->
-                     <?php include('traductor.html'); ?>
-            </div>
+            <section class="col-md-3">
+                <div class="section-heading"></div>
+                <div class="section-content">
+                    <img src="images/Title_traductor.jpg" style="padding:0px;"/-->
+                         <?php include('traductor.html'); ?>
+                </div>
+            </section>
         </div>
         <?php
         //}fin if
     } else {
         if (isset($_GET['lecc']) && ($_GET['lecc']) && ($_GET['lecc'] > 1))/* SI NO HAY SESION Y LA LECCION SELECCIONADA ES MAYOR A 1 */ {
             ?><script type="text/javascript">
-                            alert("Error: No es posible acceder a la Leccion <?php echo $_GET['lecc'] ?>. Primero debe iniciar sesi�n.");
+                alert("Error: No es posible acceder a la Leccion <?php echo $_GET['lecc'] ?>. Primero debe iniciar sesi�n.");
             </script><?php
         }
     }

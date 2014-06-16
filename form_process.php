@@ -16,7 +16,7 @@ function login($txt_matricula, $txt_clave) {
     if (!$user->login($txt_matricula, $txt_clave)) {
         return 'inicio.php';
     } else {
-        return 'inicio.php';
+        return 'inicio.php?lugar=inicio';
     }
 }
 
@@ -81,6 +81,9 @@ switch ($_POST['form']) {
         {
             $lang_dir = "inicio.php";
         }
+        break;
+    default :
+            $lang_dir = "inicio.php?lugar=inicio";
         break;
 }
 

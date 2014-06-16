@@ -8,7 +8,7 @@ if (isset($_SESSION['wc']['session']) && $_SESSION['wc']['session'])/* SI HAY SE
 } else {
     if (isset($_GET['lecc']) && ($_GET['lecc']) && ($_GET['lecc'] > 1))/* SI NO HAY SESION Y LA LECCION SELECCIONADA ES MAYOR A 1 */ {
         ?><script type="text/javascript">
-                    alert("Error: No es posible acceder a la Leccion <?php echo $_GET['lecc'] ?>. Primero debe iniciar sesi\xf3n.");
+            alert("Error: No es posible acceder a la Leccion <?php echo $_GET['lecc'] ?>. Primero debe iniciar sesi\xf3n.");
         </script><?php
     }
 }
@@ -59,9 +59,15 @@ $leccion = $bd->sig_reg($sql);
             }//fin while
             ?>
         </div>
+        <section class="col-md-3">
+            <div class="section-heading"></div>
+            <div class="section-content">
+                <img src="images/Title_traductor.jpg" style="padding:0px;"/-->
+                <?php include('traductor.html'); ?>
+            </div>
+        </section>
         <div class="col-md-3">
-            <img src="images/Title_traductor.jpg" style="padding:0px;"/-->
-            <?php include('traductor.html'); ?>
+
         </div>
     </div>
 </div>

@@ -6,5 +6,5 @@ session_start();
 $_SESSION = array();
 //Finalmente destruimos la session
 session_destroy();
-header("location: " . $_GET['lugar'] . '.php');
+header("location: " . $_GET['lugar'] . '.php?lugar='.$_GET['lugar']);
 ?>

@@ -1,1 +1,1 @@
-<?php include('inicio.php'); ?> 
+<?php include('inicio.php?lugar=inicio'); ?> 
