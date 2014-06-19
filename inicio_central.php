@@ -209,7 +209,7 @@
                     <div class="carousel-inner">
                         <div class="item">
                             <blockquote class="quote">                                  
-                                <p><i class="fa fa-quote-left"></i>Estoy muy contento Washington English college me brinda la posiblidad de capacitarme aprovechando la posibilidad y beneficios que 
+                                <p><i class="fa fa-quote-left"></i>Estoy muy contenta Washington English college me brinda la posiblidad de capacitarme aprovechando la posibilidad y beneficios que 
                                 nos brinda la internet, y asi aprender Ingles desde la comodidad de nuestro Hogar.</p>
                             </blockquote>                
                             <div class="row">
