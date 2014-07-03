@@ -194,7 +194,7 @@
             <h1 class="section-heading text-highlight"><span class="line">Enlaces Rapidos</span></h1>
             <div class="section-content">
                 <p><a href="#"><i class="fa fa-caret-right"></i>Donde Estamos</a></p>
-                <p><a href="inicio.php?lugar=galeria"><i class="fa fa-caret-right"></i>Galleria</a></p>
+                <p><a href="inicio.php?lugar=galeria"><i class="fa fa-caret-right"></i>Galeria</a></p>
                 <p><a href="inicio.php?lugar=contacto"><i class="fa fa-caret-right"></i>Contacto</a></p>
             </div><!--//section-content-->
         </section><!--//links-->

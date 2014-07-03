@@ -3,8 +3,32 @@ session_start();
 
 require_once 'clases/db.class.php';
 $bd = new db();
-if (!(isset($_GET['lugar']) && $_GET['lugar']))
+if (isset($_POST['lugar']) && $_POST['lugar']) {
+    $_GET['lugar'] = $_POST['lugar'];
+    if (isset($_POST['lecc']) && $_POST['lecc'])
+        $_GET['lecc'] = $_POST['lecc'];
+    else
+        $_SESSION['wc']['nota_pagina'] = 0;
+    if (isset($_POST['libro']) && $_POST['libro'])
+        $_GET['libro'] = $_POST['libro'];
+    if (isset($_POST['dir']) && $_POST['dir'])
+        $_GET['dir'] = $_POST['dir'];
+    if (isset($_POST['pag']) && $_POST['pag'])
+        $_GET['pag'] = $_POST['pag'];
+}else {
+    if (!(isset($_GET['lugar']) && $_GET['lugar']))
         $_GET['lugar'] = 'inicio'; /* defino el index lugar si el usuario no ha seleccionado uno */
+    if (!(isset($_GET['lecc']) && $_GET['lecc'])) {
+        $_GET['lecc'] = '#'; /* defino el index lecc si el usuario no ha seleccionado uno */
+        $_SESSION['wc']['nota_pagina'] = 0;
+    }
+    if (!(isset($_GET['libro']) && $_GET['libro']))
+        $_GET['libro'] = '#';
+    if (!(isset($_GET['dir']) && $_GET['dir']))
+        $_GET['dir'] = '#';
+    if (!(isset($_GET['pag']) && $_GET['pag']))
+        $_GET['pag'] = '1';
+}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -94,8 +118,12 @@ if (!(isset($_GET['lugar']) && $_GET['lugar']))
                                         <label>Email</label>
                                         <input name ="txt_correo" class="form-control">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Telefono</label>
+                                        <input name ="txt_telefono" class="form-control">
+                                    </div>
                                     <input type="hidden" name="form" value="primera-vez" />
-                                    <input type="hidden" name="usuario" value="<?php echo $usr; ?>" />
+                                    <input type="hidden" name="usuario" value='.$usr.' />
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-primary" />
                                     </div>
@@ -270,13 +298,13 @@ if (!(isset($_GET['lugar']) && $_GET['lugar']))
 
                                     </div><!--//navabr-collapse-->
                                 </nav><!--//main-nav-->
-
+                                <?php
+                                if (isset($_SESSION['wc']['nivel'])) {
+                                ?>
                                 <div class="chat_content" data-step="2" data-intro="Iconos de acceso Rapido">
                                     <!img id="SnapABug_bImg" style="position: relative; left: -4px;" src="https://commondatastorage.googleapis.com/code.snapengage.com/btn/chat_orange_left_es.png" alt="Ayuda" border="0" onmouseover="SnapABug.buttonOver();" onmouseout="SnapABug.buttonOut();">
                                     <ul class="share-inner-wrp">
-                                        <?php
-                                        if (isset($_SESSION['wc']['nivel'])) {
-                                            ?>
+                                        
                                             <li class="home button-wrap">
                                                 <a href="inicio.php?lugar=inicio">Inicio</a>
                                             </li>
@@ -297,9 +325,10 @@ if (!(isset($_GET['lugar']) && $_GET['lugar']))
                                                     <a href="inicio.php?lugar=servicios">Horario</a>
                                                 </li>
                                             <?php } ?>
-                                        <?php } ?>
+                                        
                                     </ul>
                                 </div>
+                                <?php } ?>
                                 <!-- ******CONTENT****** --> 
                                 <div class="content container">
                                     <?php
@@ -376,11 +405,11 @@ if (!(isset($_GET['lugar']) && $_GET['lugar']))
 
                                 <!-- *****CONFIGURE STYLE****** -->  
                                 <?php
-                                if (isset($_SESSION['wc'])) {
+                                if (isset($_SESSION['wc']['session'])) {
                                     ?>
-                                    <div data-step="1" data-intro="Haz click en el icono e ingresa al chat online" data-position='left' class="config-wrapper hidden-xs">
+                                    <div data-step="1" data-intro="Haz click en el icono e ingresa al chat online" data-position='left' class="config-wrapper">
                                         <div class="config-wrapper-inner">
-                                            <a id="config-trigger" class="config-trigger" href="#"><i class="fa fa-headphones"></i></a>
+                                            <a id="config-trigger" class="config-trigger" href="#"><i class="fa fa-comments-o"></i></a>
                                             <div id="config-panel" class="config-panel">
                                                 <h3 style="color: #000; text-align:center;">Chat Online</h3>
                                                 <p> <br />
@@ -390,7 +419,7 @@ if (!(isset($_GET['lugar']) && $_GET['lugar']))
                                                 </p>
                                                 <br>
                                                 <a href="http://www.comm100.com/livechat/" onclick=" comm100_Chat();
-                                                            return false;
+                                                        return false;
                                                    " target="_blank" title = "Live Chat Live Help Software for Website">
                                                     <img id="comm100_ButtonImage" src="http://washingtoncollege.com.ve/images/Chat_off_line.png" border="0px" alt="Live Chat Live Help Software for Website" />
                                                 </a>
