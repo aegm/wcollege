@@ -139,7 +139,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                 </div>
             </div>';
                 }
-            } else {
+            }/* else {
                 echo '<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -163,7 +163,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                     </div><!-- /.modal-content -->
                 </div>
             </div>';
-            }
+            }?*/
             ?>
             <div class="wrapper">
                 <!-- ******HEADER****** --> 
@@ -415,7 +415,9 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                                 <p> <br />
                                                     de lunes a viernes de 9 am. a 12 pm.<br> 
                                                     1 pm. a 6 pm.<br />
-                                                    S&aacute;bados de 9 am. a 12 pm.</b>
+                                                    S&aacute;bados de 9 am. a 12 pm.
+                                                    <br>
+                                                    de 1:00 pm a 3:00pm 
                                                 </p>
                                                 <br>
                                                 <a href="http://www.comm100.com/livechat/" onclick=" comm100_Chat();
@@ -450,7 +452,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                     ?>
                                     <script>
                                                     $(function() {
-                                                        introJs().setOption('showBullets', false).start();
+                                                        //introJs().setOption('showBullets', false).start();
                                                     })
                                     </script>
                                 <?php } ?>

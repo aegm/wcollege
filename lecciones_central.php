@@ -45,7 +45,7 @@ $leccion = $bd->sig_reg($sql);
                                 else
                                     echo $leccion['leccion2'] . " - " . $leccion['TITULO'];
                                 ?></a>
-                            <img id="<?php echo $leccion['audio_leccion'] ?>" class="audio_lesson" src="images/audio.png" width="20px" height="20px"/>
+                            <!--img id="<?php echo $leccion['audio_leccion'] ?>" class="audio_lesson" src="images/audio.png" width="20px" height="20px"/-->
                             <br />
 
 
