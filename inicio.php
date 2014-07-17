@@ -54,7 +54,7 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
             <link rel="stylesheet" href="plugins/flexslider/flexslider.css">
             <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/start/jquery-ui.css">
             <!--link rel="stylesheet" href="assets/plugins/pretty-photo/css/prettyPhoto.css"--> 
-            <link href="plugins/intro/introjs-royal.css.css" rel="stylesheet">
+            <!--link href="plugins/intro/introjs-royal.css.css" rel="stylesheet"-->
             <link href="plugins/intro/introjs.css" rel="stylesheet">
 
             <!-- Theme CSS -->  
