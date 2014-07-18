@@ -2,7 +2,7 @@
 if (isset($_SESSION['wc']['nivel']) && ($_SESSION['wc']['nivel'] == 'E')) {
     ?>  
     <div class="col-md-4">
-        <div class="panel panel-danger">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Perfil de Usuario</h3>
             </div>

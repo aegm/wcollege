@@ -390,8 +390,8 @@ if (isset($_POST['lugar']) && $_POST['lugar']) {
                                                     Copyright 2010 Washington English Institute RIF: J-31541069-9 | Todos los derechos Reservados</small>
                                                 <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
                                                     <li><a href="https://twitter.com/wecvenezuela"><i class="fa fa-twitter"></i></a></li>
-                                                    <!--li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                                    <li><a href="https://www.facebook.com/pages/Washington-English-College/163668283668283?ref=hl"><i class="fa fa-facebook"></i></a></li>
+                                                    <!--li><a href="#"><i class="fa fa-youtube"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-pinterest"></i></a></li>

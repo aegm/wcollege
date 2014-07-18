@@ -52,14 +52,14 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="col-md-12">
+                                            <!--div class="col-md-12">
                                                 <div class="panel panel-primary">
                                                     <div class="panel-heading">Historial academico</div>
                                                     <div class="panel-body">
                                                         <a href="downloads/historial_academico.pdf">Descarga Aqui..</a>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div-->
                                         </div>
                                     </div>
                                 </div>
